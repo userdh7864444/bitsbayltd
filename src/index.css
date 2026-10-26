@@ -1,0 +1,243 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   DESIGN TOKENS — mirrored from the live bitsbayltd.com theme
+   (startupzy palette + Gutenverse typography variables).
+------------------------------------------------------------------ */
+@theme {
+  --color-ink: #181d23;
+  --color-ink-soft: #2d3137;
+  --color-brand: #ff0000;
+  --color-brand-dark: #000000;
+  --color-accent: #ff0000;
+  --color-muted: #f7f7f7;
+  --color-line: #cccccc;
+  --color-body: #717c90;
+  --color-overlay: #0f0e0e;
+
+  /* Live site: headings render in Helvetica, body copy in Heebo. */
+  --font-display: 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Heebo', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl2: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-body);
+    background: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+  }
+
+  /* Type scale lifted from the live theme's Gutenverse font variables.
+     Mobile sizes come from the same theme's <=767px block. */
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  h6 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 60px;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .container-x {
+    @apply mx-auto w-full max-w-[1140px] px-5 sm:px-8;
+  }
+
+  /* ---------------------------------------------------------------
+     The live theme's signature shape: only the top-left and
+     bottom-right corners are rounded. Applied to buttons, cards,
+     panels and media frames throughout the site.
+  --------------------------------------------------------------- */
+  .r-diag {
+    border-radius: 30px 0 30px 0;
+  }
+  .r-diag-sm {
+    border-radius: 20px 0 20px 0;
+  }
+  .r-diag-lg {
+    border-radius: 50px 0 50px 0;
+  }
+
+  /* Buttons — 13px / 600 / uppercase / 0.15em tracking, 20px 40px padding. */
+  .btn,
+  .btn-primary,
+  .btn-dark,
+  .btn-white,
+  .btn-outline {
+    @apply inline-flex items-center gap-2.5 px-8 py-4 text-[13px] font-semibold uppercase leading-none tracking-[0.15em] transition-all duration-300;
+    font-family: var(--font-display);
+    border-radius: 20px 0 20px 0;
+  }
+
+  .btn-primary {
+    background: var(--color-brand);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #fff;
+    color: var(--color-brand);
+    box-shadow: 0 0 0 1px var(--color-brand) inset;
+  }
+
+  .btn-dark {
+    background: var(--color-ink);
+    color: #fff;
+  }
+  .btn-dark:hover {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: var(--color-brand);
+  }
+  .btn-white:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--color-line);
+    background: transparent;
+    color: var(--color-ink);
+  }
+  .btn-outline:hover {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: #fff;
+  }
+
+  /* Header "Hire" pill — the one fully-rounded button on the site. */
+  .btn-pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-xs font-semibold uppercase leading-none tracking-[0.15em] text-white transition-colors duration-300;
+    font-family: var(--font-display);
+  }
+  .btn-pill:hover {
+    background: #000;
+  }
+
+  /* Small red eyebrow above section headings (h5 style on the live site). */
+  .eyebrow {
+    @apply text-sm font-semibold uppercase leading-tight tracking-[0.15em] text-brand;
+    font-family: var(--font-display);
+  }
+
+  .nav-link {
+    @apply text-xs font-semibold uppercase leading-none tracking-[0.15em];
+    font-family: var(--font-display);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+  }
+
+  .marquee-track {
+    animation: marquee 28s linear infinite;
+  }
+
+  .marquee-track-reverse {
+    animation: marquee 28s linear infinite reverse;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
