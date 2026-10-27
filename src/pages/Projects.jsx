@@ -47,12 +47,16 @@ function Gallery({ label, items, className = '' }) {
                 className="absolute inset-0 z-10"
                 aria-label={p.title}
               />
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+              <div className="relative aspect-square overflow-hidden bg-muted">
                 <img
                   src={p.image}
                   alt={p.title}
+                  width={500}
+                  height={500}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  decoding="async"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="h-full w-full object-cover aspect-square transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-overlay/0 transition-colors duration-300 group-hover:bg-overlay/70" />
                 <div className="absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">

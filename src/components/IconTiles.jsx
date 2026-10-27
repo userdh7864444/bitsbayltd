@@ -27,13 +27,13 @@ export default function IconTiles({ items, className = '' }) {
               className={`h-20 w-20 ${filled ? 'text-white' : 'text-brand'}`}
               strokeWidth={1.25}
             />
-            <h2
-              className={`mt-5 flex min-h-[2.2em] items-start justify-center text-lg ${
+            <h3
+              className={`mt-5 flex min-h-[2.2em] items-start justify-center text-lg font-semibold ${
                 filled ? 'text-white' : 'text-ink'
               }`}
             >
               {item.label}
-            </h2>
+            </h3>
           </motion.div>
         )
       })}

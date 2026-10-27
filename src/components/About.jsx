@@ -27,7 +27,8 @@ export default function About({ showQuote = true }) {
                   height={520}
                   loading="lazy"
                   decoding="async"
-                  className="h-[380px] w-full object-cover aspect-[466/520] sm:h-[460px] lg:h-[520px]"
+                  sizes="(max-width: 1024px) 100vw, 466px"
+                  className="w-full h-auto aspect-[466/520] max-h-[520px] object-cover"
                 />
               </div>
 
@@ -50,9 +51,9 @@ export default function About({ showQuote = true }) {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="mt-8 text-black">
+            <h3 className="mt-8 text-2xl font-bold text-black">
               <strong>{about.storyTitle}</strong>
-            </h2>
+            </h3>
             <p className="mt-3">
               We at <strong className="text-ink">Bitsbay</strong> are focused in developing
               apps that let our clients stand out in front of their competitors. Our team

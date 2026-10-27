@@ -91,10 +91,16 @@ Redirect 301 /our-projects/                /projects
 
 <IfModule mod_headers.c>
   # HSTS (Strict-Transport-Security: 1 year, include subdomains, preload)
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+  # Sent on all responses (canonical rules already enforce HTTPS on port 80)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Plaintext files (ads.txt, robots.txt, llms.txt)
+  <FilesMatch "^(ads|robots|llms)\.txt$">
+    Header set Content-Type "text/plain; charset=utf-8"
+  </FilesMatch>
 
   # 1-year immutable cache for hashed static assets
   <FilesMatch "\.(css|js|woff2|woff|webp|png|jpg|jpeg|svg)$">

@@ -1,3 +1,5 @@
 # Bitsbay Ltd - Authorized Digital Sellers (ads.txt)
 # https://bitsbayltd.com
-# This website does not sell advertising inventory.
+# Bitsbay does not sell advertising inventory or display third-party advertisements.
+# Contact: support@bitsbayltd.com
+placeholder.example.com, placeholder, DIRECT, 0000000000000000

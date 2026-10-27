@@ -35,7 +35,7 @@ export default function Technologies() {
             {Object.entries(technologies).map(([group, items]) => (
               <div key={group}>
                 <Reveal className="text-center">
-                  <h2>{group}</h2>
+                  <h3 className="text-2xl font-bold">{group}</h3>
                 </Reveal>
 
                 <Stagger
