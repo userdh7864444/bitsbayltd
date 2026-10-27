@@ -64,7 +64,7 @@ export default function Navbar() {
             className="flex shrink-0 items-center"
             aria-label="Bitsbay home"
           >
-            <img src={brand.logoIcon} alt="Bitsbay Logo" width={150} height={112} decoding="async" className="h-11 w-auto aspect-[150/112]" />
+            <img src={brand.logoIcon} alt="Bitsbay Logo" width={150} height={112} decoding="async" sizes="44px" className="h-11 w-auto aspect-[150/112]" />
           </Link>
 
           {/* Desktop menu — three levels deep */}
@@ -208,6 +208,7 @@ export default function Navbar() {
                   width={150}
                   height={112}
                   decoding="async"
+                  sizes="48px"
                   className="h-12 w-auto aspect-[150/112]"
                 />
                 <button

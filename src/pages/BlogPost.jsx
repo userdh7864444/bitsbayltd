@@ -88,7 +88,16 @@ export default function BlogPost() {
           </div>
 
           <figure className="overflow-hidden border border-line bg-muted r-diag">
-            <img src={post.cover} alt={post.title} className="w-full object-cover" />
+            <img
+              src={post.cover}
+              alt={post.title}
+              width={1200}
+              height={675}
+              fetchPriority="high"
+              decoding="async"
+              sizes="(max-width: 1024px) 100vw, 800px"
+              className="w-full h-auto aspect-[16/9] object-cover"
+            />
           </figure>
 
           <div className="mt-10">
@@ -108,7 +117,9 @@ export default function BlogPost() {
                         src={block.src}
                         alt={block.alt || block.text || post.title}
                         loading="lazy"
-                        className="w-full object-cover"
+                        decoding="async"
+                        sizes="(max-width: 1024px) 100vw, 800px"
+                        className="w-full h-auto object-cover"
                       />
                     </figure>
                   </Reveal>
@@ -159,8 +170,12 @@ export default function BlogPost() {
                   <img
                     src={p.cover}
                     alt={p.title}
+                    width={800}
+                    height={450}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    decoding="async"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="h-full w-full object-cover aspect-[16/9] transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">

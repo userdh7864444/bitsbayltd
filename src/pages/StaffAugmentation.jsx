@@ -134,8 +134,12 @@ export default function StaffAugmentation() {
               <img
                 src="/staff/img-1.png"
                 alt="Bitsbay staff augmentation"
+                width={1600}
+                height={711}
                 loading="lazy"
-                className="w-full object-cover"
+                decoding="async"
+                sizes="(max-width: 1280px) 100vw, 1200px"
+                className="w-full h-auto aspect-[1600/711] object-cover"
               />
             </figure>
           </Reveal>
@@ -146,8 +150,12 @@ export default function StaffAugmentation() {
                 <img
                   src="/staff/overview.avif"
                   alt="Bitsbay dedicated engineering team overview"
+                  width={1080}
+                  height={1080}
                   loading="lazy"
-                  className="w-full object-cover"
+                  decoding="async"
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className="w-full h-auto aspect-square object-cover"
                 />
               </figure>
             </Reveal>
@@ -175,8 +183,12 @@ export default function StaffAugmentation() {
               <img
                 src="/staff/img-2.png"
                 alt="Bitsbay remote developers collaborating on software sprint"
+                width={1600}
+                height={711}
                 loading="lazy"
-                className="w-full object-cover"
+                decoding="async"
+                sizes="(max-width: 1280px) 100vw, 1200px"
+                className="w-full h-auto aspect-[1600/711] object-cover"
               />
             </figure>
           </Reveal>

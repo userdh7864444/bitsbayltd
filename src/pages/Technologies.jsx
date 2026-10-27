@@ -57,8 +57,12 @@ export default function Technologies() {
                           <img
                             src={logo}
                             alt={`${t} technology logo`}
+                            width={80}
+                            height={80}
                             loading="lazy"
-                            className="h-20 w-20 object-contain"
+                            decoding="async"
+                            sizes="80px"
+                            className="h-20 w-20 aspect-square object-contain"
                           />
                         ) : entry ? (
                           <entry.Icon

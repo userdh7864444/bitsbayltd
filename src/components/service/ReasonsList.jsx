@@ -30,8 +30,12 @@ export default function ReasonsList({ section }) {
               <img
                 src={image}
                 alt={heading || 'Why choose Bitsbay'}
+                width={530}
+                height={471}
                 loading="lazy"
-                className="mx-auto w-full max-w-md object-contain"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 448px"
+                className="mx-auto w-full max-w-md h-auto aspect-[530/471] object-contain"
               />
             </Reveal>
           )}

@@ -64,7 +64,7 @@ export default function Hero() {
             width={420}
             height={426}
             fetchPriority="high"
-            sizes="(max-width: 1024px) 100vw, 420px"
+            sizes="420px"
             className="w-full max-w-[420px] aspect-[420/426] h-auto object-contain"
           />
         </motion.div>

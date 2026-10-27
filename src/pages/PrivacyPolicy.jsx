@@ -3,6 +3,7 @@ import PageHeader from './PageHeader'
 import Reveal from '../components/Reveal'
 import { privacyPolicy as p } from '../data/legal'
 import { staticPagesSeo } from '../data/seoData'
+import ObfuscatedEmail from '../components/ObfuscatedEmail'
 
 function Bullets({ items }) {
   return (
@@ -76,12 +77,11 @@ export default function PrivacyPolicy() {
             <p className="mt-3">{p.contact.company}</p>
             <p className="mt-1">
               Email:{' '}
-              <a
-                href={`mailto:${p.contact.email}`}
+              <ObfuscatedEmail
+                email={p.contact.email}
+                label="Email Bitsbay support"
                 className="text-brand transition-colors hover:underline"
-              >
-                {p.contact.email}
-              </a>
+              />
             </p>
             <p className="mt-1">
               Website:{' '}

@@ -154,8 +154,12 @@ export default function AmazonGrowth() {
                 <img
                   src={page.method.image}
                   alt="Bitsbay Amazon advertising campaign performance sheet"
+                  width={1600}
+                  height={1066}
                   loading="lazy"
-                  className="w-full object-cover"
+                  decoding="async"
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className="w-full h-auto aspect-[1600/1066] object-cover"
                 />
               </figure>
             </Reveal>

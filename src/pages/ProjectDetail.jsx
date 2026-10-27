@@ -174,7 +174,9 @@ export default function ProjectDetail() {
                       src={src}
                       alt={`${project.title} software interface screenshot ${i + 1}`}
                       loading="lazy"
-                      className="w-full object-cover"
+                      decoding="async"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                      className="w-full h-auto object-cover"
                     />
                   </motion.figure>
                 ))}

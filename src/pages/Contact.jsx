@@ -11,6 +11,7 @@ import {
 import PageHeader from './PageHeader'
 import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
+import ObfuscatedEmail from '../components/ObfuscatedEmail'
 import { getIcon } from '../lib/icons'
 import { contactIntro, email, offices, socials } from '../data/site'
 import { staticPagesSeo } from '../data/seoData'
@@ -440,14 +441,14 @@ export default function Contact() {
               <div className="border border-line p-6 r-diag-sm">
                 <h3>Send Us A Message</h3>
 
-                <a
-                  href={`mailto:${email}`}
-                  className="mt-2 flex items-center gap-3 transition-colors hover:text-brand"
-                >
+                <div className="mt-2 flex items-center gap-3">
                   <Mail className="h-4 w-4 shrink-0 text-brand" />
-
-                  {email}
-                </a>
+                  <ObfuscatedEmail
+                    email={email}
+                    label="Send Us A Message"
+                    className="transition-colors hover:text-brand"
+                  />
+                </div>
               </div>
             </div>
 

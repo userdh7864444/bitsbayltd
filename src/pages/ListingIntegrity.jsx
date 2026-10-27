@@ -270,8 +270,12 @@ export default function ListingIntegrity() {
             <img
               src="/listing/violations.png"
               alt="Amazon listing violation dashboard"
+              width={1448}
+              height={1086}
               loading="lazy"
-              className="w-full overflow-hidden object-cover r-diag"
+              decoding="async"
+              sizes="(max-width: 1280px) 100vw, 1200px"
+              className="w-full h-auto aspect-[1448/1086] overflow-hidden object-cover r-diag"
             />
           </Reveal>
         </div>

@@ -19,7 +19,7 @@ export default function About({ showQuote = true }) {
         {showQuote && (
           <Reveal className="lg:pr-10">
             <div className="relative">
-              <div className="overflow-hidden r-diag-lg">
+              <div className="overflow-hidden r-diag-lg max-w-[466px]">
                 <img
                   src="/about-photo.webp"
                   alt="The Bitsbay software engineering team collaborating at work"
@@ -27,8 +27,8 @@ export default function About({ showQuote = true }) {
                   height={520}
                   loading="lazy"
                   decoding="async"
-                  sizes="(max-width: 1024px) 100vw, 466px"
-                  className="w-full h-auto aspect-[466/520] max-h-[520px] object-cover"
+                  sizes="(max-width: 640px) 100vw, 466px"
+                  className="w-full h-auto aspect-[466/520] object-cover"
                 />
               </div>
 
