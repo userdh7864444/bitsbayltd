@@ -175,12 +175,12 @@ export default function Contact() {
         title={seo.title}
         description={seo.description}
         path="/contact"
-        image="/banners/contact.jpg"
+        image="/banners/contact.webp"
         schema={contactSchema}
       />
       <PageHeader
         title="Contact Us"
-        image="/banners/contact.jpg"
+        image="/banners/contact.webp"
       />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">

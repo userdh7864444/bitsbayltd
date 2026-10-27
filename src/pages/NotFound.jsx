@@ -17,13 +17,13 @@ export default function NotFound() {
         title={seo.title}
         description={seo.description}
         path="/404"
-        image="/banners/technologies.jpg"
+        image="/banners/technologies.webp"
         noindex
       />
       <PageHeader
         title="Page Not Found"
         blurb="The link may be old, or the page moved."
-        image="/banners/technologies.jpg"
+        image="/banners/technologies.webp"
         align="center"
       />
 

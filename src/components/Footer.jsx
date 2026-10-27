@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[26fr_26fr_16fr_32fr]">
           <Reveal>
             <Link to="/" className="inline-flex">
-              <img src={brand.logoIcon} alt="Bitsbay Logo" width={150} height={112} decoding="async" loading="lazy" sizes="56px" className="h-14 w-auto aspect-[150/112]" />
+              <img src={brand.logoIcon} alt="Bitsbay Logo" width={150} height={112} decoding="async" loading="lazy" className="h-14 w-auto aspect-[150/112]" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed">{footerBlurb}</p>
             <div className="mt-6 flex gap-3">

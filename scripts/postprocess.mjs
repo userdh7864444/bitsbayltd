@@ -72,35 +72,33 @@ for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8')
   let changed = false
 
-  // A. Non-blocking Google Fonts:
-  // Remove any nested/duplicate noscript blocks and make sure fonts are non-blocking
-  html = html.replace(/<noscript>\s*<link[^>]+fonts\.googleapis\.com[^>]+>\s*<\/noscript>/gi, '')
+  // A. Clean up any external Google Fonts stylesheet links (local Heebo font is used directly)
+  html = html.replace(/<link[^>]+fonts\.googleapis\.com[^>]+>\s*/gi, '')
+  html = html.replace(/<link[^>]+fonts\.gstatic\.com[^>]+>\s*/gi, '')
+  html = html.replace(/<noscript>\s*<link[^>]+fonts\.googleapis\.com[^>]+>\s*<\/noscript>\s*/gi, '')
 
-  const rawFontRegex = /<link\s+href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]+"\s+rel="stylesheet"\s*\/?>/gi
-  if (rawFontRegex.test(html)) {
-    html = html.replace(rawFontRegex, (match) => {
-      const urlMatch = match.match(/href="([^"]+)"/)
-      const url = urlMatch
-        ? urlMatch[1]
-        : 'https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap'
-      return `<link rel="preload" as="style" href="${url}" />\n    <link href="${url}" rel="stylesheet" media="print" onload="this.media='all'" />`
-    })
-    changed = true
-  }
-
-  // B. Make Vite CSS non-blocking and inline it (eliminates render-blocking CSS completely)
+  // B. Zero render-blocking CSS: inline entire stylesheet and keep preload for cache warming
   const cssLinkRegex = /<link\s+rel="stylesheet"\s+crossorigin(?:="")?\s+href="(\/assets\/[^"]+\.css)"\s*\/?>/gi
   if (cssLinkRegex.test(html)) {
     html = html.replace(cssLinkRegex, (match, href) => {
-      const nonBlockingCss = [
+      const inlineCss = [
         `<style id="bitsbay-critical-css">${cssContent}</style>`,
         `<link rel="preload" as="style" href="${href}" crossorigin="" />`,
-        `<link rel="stylesheet" href="${href}" media="print" onload="this.media='all'" crossorigin="" />`,
       ].join('\n    ')
-      return nonBlockingCss
+      return inlineCss
     })
     changed = true
   }
+
+  // Also clean up any lingering noscript stylesheet fallbacks that static SEO auditors flag
+  html = html.replace(/<noscript>\s*<link[^>]+rel="stylesheet"[^>]+>\s*<\/noscript>\s*/gi, '')
+
+  // B2. Add explicit defer to Vite's module script when prerenderer places it in <head>
+  html = html.replace(
+    /<script\s+type="module"\s+crossorigin(?:="")?\s+src="(\/assets\/[^"]+\.js)"><\/script>/gi,
+    (match, src) => `<script type="module" crossorigin="" defer src="${src}"></script>`
+  )
+
 
   // C. Protect plaintext emails from spam harvesters (Plaintext Emails Test)
   // 1) Inside JSON-LD: use valid JSON unicode escape (\u0040)
@@ -128,6 +126,18 @@ for (const file of htmlFiles) {
     html = html.replace(/solutions@bitsbayltd\.com/g, encodedSolutionsEmail)
     changed = true
   }
+
+  // D. Upgrade .jpg/.jpeg/.png image references to .webp where the WebP exists in public/
+  // This auto-upgrades service hero images, blog covers, project images etc after running convert-to-webp.mjs
+  const imgJpgRegex = /(["'(])(\/(hero|banners|shots|amazon|listing|staff|projects|blog)\/[^"'()]+)\.(jpg|jpeg|png)(["'()\/])/gi
+  html = html.replace(imgJpgRegex, (match, open, imgPath, dir, ext, close) => {
+    const webpPath = path.resolve('public', imgPath.substring(1) + '.webp')
+    if (fs.existsSync(webpPath)) {
+      changed = true
+      return `${open}${imgPath}.webp${close}`
+    }
+    return match
+  })
 
   fs.writeFileSync(file, html, 'utf8')
   optimizedCount++

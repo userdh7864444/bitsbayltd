@@ -88,7 +88,7 @@ export const hero = {
     'We take pride in enabling future markets with state-of-the-art digital solutions.',
   cta: { label: 'Get Started', to: '/contact' },
   image: '/hero-logo.png',
-  background: '/banners/hero-bg.jpg',
+  background: '/banners/hero-bg.webp',
 }
 
 /** Three icon cards; the fourth column is the "Make Appointment" panel. */

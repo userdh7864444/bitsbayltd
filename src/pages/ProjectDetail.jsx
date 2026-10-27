@@ -44,13 +44,13 @@ export default function ProjectDetail() {
         title={seo.title}
         description={seo.description}
         path={`/projects/${project.slug}`}
-        image={project.image || '/banners/projects.jpg'}
+        image={project.image || '/banners/projects.webp'}
         schema={schema}
       />
       <Banner
         title={project.heading || project.title}
         subtitle={project.clientType ? `${project.clientType} • ${project.category}` : project.category}
-        image="/banners/projects.jpg"
+        image="/banners/projects.webp"
       >
         <Link to="/projects" className="btn-white">
           <ArrowLeft className="h-4 w-4" />

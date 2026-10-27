@@ -27,9 +27,9 @@ export default function PrivacyPolicy() {
         title={seo.title}
         description={seo.description}
         path="/privacy-policy"
-        image="/banners/about.jpg"
+        image="/banners/about.webp"
       />
-      <PageHeader title={p.title} blurb={p.updated} image="/banners/about.jpg" />
+      <PageHeader title={p.title} blurb={p.updated} image="/banners/about.webp" />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">
         <div className="container-x max-w-4xl">

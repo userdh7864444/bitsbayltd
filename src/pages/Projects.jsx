@@ -16,9 +16,9 @@ export default function Projects() {
         title={seo.title}
         description={seo.description}
         path="/projects"
-        image="/banners/projects.jpg"
+        image="/banners/projects.webp"
       />
-      <PageHeader title="Projects" image="/banners/projects.jpg" />
+      <PageHeader title="Projects" image="/banners/projects.webp" />
 
       <Gallery label="WEB APPLICATIONS" items={webProjects} />
       <Gallery label="MOBILE APPLICATIONS" items={mobileProjects} className="pb-20" />

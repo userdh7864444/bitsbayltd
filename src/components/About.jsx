@@ -22,12 +22,13 @@ export default function About({ showQuote = true }) {
               <div className="overflow-hidden r-diag-lg max-w-[466px]">
                 <img
                   src="/about-photo.webp"
+                  srcSet="/about-photo-sm.webp 360w, /about-photo.webp 466w"
+                  sizes="(max-width: 640px) 360px, 466px"
                   alt="The Bitsbay software engineering team collaborating at work"
                   width={466}
                   height={520}
                   loading="lazy"
                   decoding="async"
-                  sizes="(max-width: 640px) 100vw, 466px"
                   className="w-full h-auto aspect-[466/520] object-cover"
                 />
               </div>

@@ -19,9 +19,9 @@ export default function Technologies() {
         title={seo.title}
         description={seo.description}
         path="/technologies"
-        image="/banners/technologies.jpg"
+        image="/banners/technologies.webp"
       />
-      <PageHeader title={technologiesIntro.eyebrow} image="/banners/technologies.jpg" uppercaseTitle={false} />
+      <PageHeader title={technologiesIntro.eyebrow} image="/banners/technologies.webp" uppercaseTitle={false} />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">
         <div className="container-x">

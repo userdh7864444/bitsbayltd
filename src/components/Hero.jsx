@@ -12,10 +12,7 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[660px] lg:min-h-[780px]">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${hero.background})` }}
-        />
+        <div className="hero-bg-responsive h-full w-full bg-cover bg-center" />
         <div className="absolute inset-0 bg-overlay/72" />
       </div>
 
@@ -51,21 +48,21 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right column is hidden on mobile on the live site too. */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.25, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="hidden justify-center lg:flex"
+          className="flex justify-center mt-6 lg:mt-0"
         >
           <img
-            src={hero.image}
+            src="/hero-logo.webp"
+            srcSet="/hero-logo-sm.webp 260w, /hero-logo.webp 420w"
+            sizes="(max-width: 640px) 260px, (max-width: 1024px) 320px, 420px"
             alt="Bitsbay - Custom Software & Amazon Growth Agency"
             width={420}
             height={426}
             fetchPriority="high"
-            sizes="420px"
-            className="w-full max-w-[420px] aspect-[420/426] h-auto object-contain"
+            className="w-full max-w-[240px] sm:max-w-[300px] lg:max-w-[420px] aspect-[420/426] h-auto object-contain"
           />
         </motion.div>
       </div>

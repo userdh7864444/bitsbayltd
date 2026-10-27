@@ -29,7 +29,7 @@ export default function ServicesPage() {
         path="/services"
         schema={servicesSchema}
       />
-      <PageHeader title="Services" image="/banners/services.jpg" />
+      <PageHeader title="Services" image="/banners/services.webp" />
       <Services />
       <Testimonials />
     </>

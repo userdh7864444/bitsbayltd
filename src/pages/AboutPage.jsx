@@ -34,7 +34,7 @@ export default function AboutPage() {
         path="/about"
         schema={aboutSchema}
       />
-      <PageHeader title="About Us" blurb={mission} image="/banners/about.jpg" />
+      <PageHeader title="About Us" blurb={mission} image="/banners/about.webp" />
 
       <About showQuote={false} />
 

@@ -15,9 +15,9 @@ export default function Blog() {
         title={seo.title}
         description={seo.description}
         path="/blog"
-        image="/banners/technologies.jpg"
+        image="/banners/technologies.webp"
       />
-      <PageHeader title="Blog" image="/banners/technologies.jpg" />
+      <PageHeader title="Blog" image="/banners/technologies.webp" />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">
         <div className="container-x">

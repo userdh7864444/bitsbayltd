@@ -4,6 +4,37 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
 
+# ── HTML: always revalidate ───────────────────────────────────────────────────
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+# ── Hashed JS/CSS assets: 1 year immutable ───────────────────────────────────
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Images: 1 year ───────────────────────────────────────────────────────────
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/*.gif
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Fonts: 1 year ────────────────────────────────────────────────────────────
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Plaintext utility files ───────────────────────────────────────────────────
 /ads.txt
   Content-Type: text/plain; charset=utf-8
 

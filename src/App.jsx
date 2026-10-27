@@ -29,7 +29,8 @@ export default function App() {
   // Smooth inertial scrolling — skipped when the user prefers reduced motion.
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced) return
+    const isTouchOrMobile = window.matchMedia('(max-width: 768px)').matches || ('ontouchstart' in window) || navigator.maxTouchPoints > 0
+    if (prefersReduced || isTouchOrMobile) return
 
     const lenis = new Lenis({ duration: 1.1, smoothWheel: true })
     setLenis(lenis)

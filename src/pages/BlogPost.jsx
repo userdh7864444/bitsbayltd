@@ -57,7 +57,7 @@ export default function BlogPost() {
         title={seo.title}
         description={seo.description}
         path={`/blog/${post.slug}`}
-        image={post.cover || '/banners/technologies.jpg'}
+        image={post.cover || '/banners/technologies.webp'}
         schema={schema}
       />
       <Banner title={post.title} subtitle={post.date} image={post.cover} uppercaseTitle={false}>
