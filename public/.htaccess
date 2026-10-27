@@ -1,0 +1,109 @@
+DirectoryIndex index.html
+ErrorDocument 404 /404/index.html
+
+# Ensure proper MIME types for ES module scripts, CSS, and assets
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+  AddType application/json .json
+</IfModule>
+
+# Enable mod_rewrite for redirect rules
+Options -MultiViews
+RewriteEngine On
+
+# ── Canonical URL enforcement (Single-Hop 301) ──────────────────────────────────
+# Force HTTPS and non-www (https://bitsbayltd.com) in a single 301 redirect
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://bitsbayltd.com%{REQUEST_URI} [R=301,L]
+# ──────────────────────────────────────────────────────────────────────────────
+
+# ── 301 Permanent Redirects (old WordPress flat URLs → new /services/* paths) ──
+Redirect 301 /amazon-services              /services/amazon
+Redirect 301 /amazon-services/             /services/amazon
+Redirect 301 /ad-services                  /services/ad-services
+Redirect 301 /ad-services/                 /services/ad-services
+Redirect 301 /android-app-development      /services/android-app-development
+Redirect 301 /android-app-development/     /services/android-app-development
+Redirect 301 /ios-app-development          /services/ios-app-development
+Redirect 301 /ios-app-development/         /services/ios-app-development
+Redirect 301 /cross-platform-mobile-app-development  /services/cross-platform-mobile-app-development
+Redirect 301 /cross-platform-mobile-app-development/ /services/cross-platform-mobile-app-development
+Redirect 301 /custom-web-app               /services/custom-web-app
+Redirect 301 /custom-web-app/              /services/custom-web-app
+Redirect 301 /saas-application-development /services/saas-application-development
+Redirect 301 /saas-application-development//services/saas-application-development
+Redirect 301 /iot-development              /services/iot-development
+Redirect 301 /iot-development/             /services/iot-development
+Redirect 301 /chatbot-development          /services/chatbot-development
+Redirect 301 /chatbot-development/         /services/chatbot-development
+Redirect 301 /staff-augmentation           /services/staff-augmentation
+Redirect 301 /staff-augmentation/          /services/staff-augmentation
+Redirect 301 /about-us                     /about
+Redirect 301 /about-us/                    /about
+Redirect 301 /contact-us                   /contact
+Redirect 301 /contact-us/                  /contact
+Redirect 301 /our-projects                 /projects
+Redirect 301 /our-projects/                /projects
+
+# ── GZIP / Deflate Compression ────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript text/javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE image/svg+xml image/x-icon
+  AddOutputFilterByType DEFLATE font/woff font/woff2 font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+# ── Browser Caching & Cache-Control ───────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML: always revalidate so deployments update immediately
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # CSS & JavaScript (Vite content-hashed assets)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Images & Media
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HSTS (Strict-Transport-Security: 1 year, include subdomains, preload)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # 1-year immutable cache for hashed static assets
+  <FilesMatch "\.(css|js|woff2|woff|webp|png|jpg|jpeg|svg)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # Revalidate HTML
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+

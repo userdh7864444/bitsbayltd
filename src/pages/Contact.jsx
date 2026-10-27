@@ -9,9 +9,11 @@ import {
 } from 'lucide-react'
 
 import PageHeader from './PageHeader'
+import SEO from '../components/SEO'
 import Reveal from '../components/Reveal'
 import { getIcon } from '../lib/icons'
 import { contactIntro, email, offices, socials } from '../data/site'
+import { staticPagesSeo } from '../data/seoData'
 
 import {
   CONTACT_RECIPIENT,
@@ -139,8 +141,42 @@ export default function Contact() {
     }
   }
 
+  const seo = staticPagesSeo.contact
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Bitsbay Ltd',
+    url: 'https://bitsbayltd.com/contact',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Bitsbay Ltd',
+      url: 'https://bitsbayltd.com',
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+1-904-809-7098',
+          contactType: 'sales',
+          areaServed: 'US',
+        },
+        {
+          '@type': 'ContactPoint',
+          telephone: '+92-333-3810066',
+          contactType: 'customer service',
+          areaServed: 'PK',
+        },
+      ],
+    },
+  }
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/contact"
+        image="/banners/contact.jpg"
+        schema={contactSchema}
+      />
       <PageHeader
         title="Contact Us"
         image="/banners/contact.jpg"

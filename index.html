@@ -4,28 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/logo-icon.png" />
-    <title>Bitsbay — Impacting Future Markets with top-notch digital solutions</title>
-    <meta
-      name="description"
-      content="Bitsbay builds custom web apps, mobile apps, SaaS platforms and Amazon growth systems for businesses that want to move fast."
-    />
-    <link rel="canonical" href="https://bitsbayltd.com/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bitsbay — Impacting Future Markets" />
-    <meta
-      property="og:description"
-      content="Custom web & mobile solutions. We turn ideas into scalable, user-centric applications."
-    />
-    <meta property="og:url" content="https://bitsbayltd.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Non-blocking font load: media="print" tells the browser to download
+      the stylesheet without blocking render; onload swaps it to screen.
+      The <noscript> fallback covers JS-disabled browsers.
+    -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <!-- Google Analytics (GA4) - Replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- Search Engine Verification Tags (optional if using DNS verification) -->
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_TOKEN_HERE" /> -->
+    <!-- <meta name="msvalidate.01" content="YOUR_BING_TOKEN_HERE" /> -->
+    <!-- Sitewide structured data — applies to every prerendered page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Bitsbay Ltd",
+      "alternateName": "Bitsbay",
+      "url": "https://bitsbayltd.com",
+      "logo": "https://bitsbayltd.com/logo-icon.png",
+      "image": "https://bitsbayltd.com/og-image.jpg",
+      "description": "Software development agency building custom web apps, mobile apps, SaaS platforms and Amazon growth systems.",
+      "email": "support@bitsbayltd.com",
+      "telephone": ["+19048097098", "+923333810066"],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "1st Floor, Zoom Square Plaza, Masoom Shah Road",
+          "addressLocality": "Multan",
+          "postalCode": "60000",
+          "addressCountry": "PK"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "2234 North Federal Hwy Ste 3184",
+          "addressLocality": "Boca Raton",
+          "addressRegion": "FL",
+          "postalCode": "33431",
+          "addressCountry": "US"
+        }
+      ],
+      "areaServed": ["US", "GB", "PK"],
+      "sameAs": [
+        "https://www.linkedin.com/company/bitsbayltd",
+        "https://www.facebook.com/bitsbayltd",
+        "https://www.youtube.com/@bitsbayltd",
+        "https://www.upwork.com/agencies/bitsbay/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Software Development Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Application Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Platform Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Amazon Seller Growth Services" } }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

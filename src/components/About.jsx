@@ -22,9 +22,12 @@ export default function About({ showQuote = true }) {
               <div className="overflow-hidden r-diag-lg">
                 <img
                   src="/about-photo.webp"
-                  alt="The Bitsbay team at work"
+                  alt="The Bitsbay software engineering team collaborating at work"
+                  width={466}
+                  height={520}
                   loading="lazy"
-                  className="h-[380px] w-full object-cover sm:h-[460px] lg:h-[520px]"
+                  decoding="async"
+                  className="h-[380px] w-full object-cover aspect-[466/520] sm:h-[460px] lg:h-[520px]"
                 />
               </div>
 

@@ -7,7 +7,7 @@
 // next. Everything is resolved here instead: one pass, one shape, and a section
 // is only dropped when it genuinely carries no content at all.
 
-const KINDS = ['intro', 'cards', 'reasons', 'process']
+const KINDS = ['intro', 'cards', 'reasons', 'process', 'faq', 'results']
 
 /** Trimmed string, or '' for anything that isn't usable copy. */
 const str = (value) => {
@@ -132,6 +132,8 @@ export const normalizeSection = (raw, index = 0) => {
     paragraphs: toLines(raw.paragraphs, raw.body, raw.text, raw.copy),
     pills: toLines(raw.pills, raw.tags),
     entries,
+    // ResultsBlock cross-links: [{ label, to }]
+    links: Array.isArray(raw.links) ? raw.links : [],
     image: pick(raw.image, raw.illustration),
     columns: Number(raw.columns) > 0 ? Number(raw.columns) : 0,
     featuredFirst: Boolean(raw.featuredFirst),

@@ -1,7 +1,11 @@
 import { useLocation, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import ServiceHero from '../components/service/ServiceHero'
 import Reveal, { Stagger, childVariants } from '../components/Reveal'
+import ResultsBlock from '../components/service/ResultsBlock'
+import FaqBlock from '../components/service/FaqBlock'
+import { serviceSeo } from '../data/seoData'
 
 /**
  * /ad-services/ and /amazon-services/ share a layout on the live site: hero →
@@ -60,9 +64,31 @@ export default function AmazonGrowth() {
   const { pathname } = useLocation()
   const slug = pathname.split('/').filter(Boolean).pop()
   const page = content[slug] ?? content['amazon-services']
+  const seoKey = slug === 'ad-services' ? 'ad-services' : 'amazon-services'
+  const seo = serviceSeo[seoKey]
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: seo.serviceType,
+    provider: {
+      '@type': 'Organization',
+      name: 'Bitsbay Ltd',
+      url: 'https://bitsbayltd.com',
+    },
+    areaServed: ['US', 'UK', 'PK', 'Global'],
+    serviceType: seo.serviceType,
+  }
 
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path={`/services/${seoKey}`}
+        image={page.heroImage || '/og-image.jpg'}
+        schema={schema}
+      />
       <ServiceHero
         title={page.title}
         subtitle={page.subtitle}
@@ -127,7 +153,7 @@ export default function AmazonGrowth() {
               <figure className="overflow-hidden border border-line bg-muted r-diag">
                 <img
                   src={page.method.image}
-                  alt=""
+                  alt="Bitsbay Amazon advertising campaign performance sheet"
                   loading="lazy"
                   className="w-full object-cover"
                 />
@@ -136,6 +162,63 @@ export default function AmazonGrowth() {
           </div>
         </section>
       )}
+
+      <ResultsBlock
+        section={{
+          heading: 'Proven Amazon Growth Results',
+          subheading: 'Data-driven marketplace scaling backed by verifiable client performance metrics.',
+          entries: [
+            {
+              stat: '4.2x',
+              label: 'Average ROAS achieved',
+              detail: 'Targeted PPC bidding and automated negative keyword harvesting maximize ad efficiency.',
+            },
+            {
+              stat: '$50M+',
+              label: 'Amazon GMV managed',
+              detail: 'Over 50 million dollars in gross merchandise value generated for client storefronts.',
+            },
+            {
+              stat: '98%',
+              label: 'Buy Box retention',
+              detail: '24/7 automated monitoring against hijackers, rogue variations, and price erosion.',
+            },
+          ],
+          links: [
+            { label: 'Explore Ad Services', to: '/services/ad-services' },
+            { label: 'Listing Integrity & Protection', to: '/services/listing-integrity' },
+            { label: 'View client success stories', to: '/projects' },
+          ],
+        }}
+      />
+
+      <FaqBlock
+        section={{
+          heading: 'Amazon Account & Ad Management FAQs',
+          entries: [
+            {
+              title: 'What is full-service Amazon account management?',
+              body: 'We manage your day-to-day Amazon operations including listing optimization, keyword research, A/B testing images and copy, Sponsored Products/Brands PPC, inventory forecasting, and brand registry protection.',
+            },
+            {
+              title: 'How quickly can I expect to see improvements in Amazon sales and ROAS?',
+              body: 'Initial campaign optimizations and wasted spend elimination typically show measurable ROAS gains within 14–30 days. Organic ranking increases and flywheel momentum follow in months 2–3.',
+            },
+            {
+              title: 'Do you work with both Seller Central and Vendor Central accounts?',
+              body: 'Yes. We manage both 3P (Seller Central) and 1P (Vendor Central) brands across US, UK, EU, CA, and emerging Amazon marketplaces.',
+            },
+            {
+              title: 'What makes Bitsbay different from other Amazon marketing agencies?',
+              body: 'Unlike agencies that only run ad bids, we integrate custom software engineering, proprietary algorithmic listing tracking, and hands-on operational dispute resolution.',
+            },
+            {
+              title: 'What are your management fees and pricing structure?',
+              body: 'We offer transparent monthly retainers tailored to catalog size and ad spend, often paired with a performance-aligned growth incentive.',
+            },
+          ],
+        }}
+      />
 
       <section className="bg-[#0000001c] py-16 sm:py-20 lg:py-[100px]">
         <div className="container-x max-w-3xl text-center">

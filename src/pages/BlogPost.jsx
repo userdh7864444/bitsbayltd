@@ -1,8 +1,10 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Banner from '../components/Banner'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, UserCheck } from 'lucide-react'
 import Reveal from '../components/Reveal'
 import { getPostBySlug, posts } from '../data/blog'
+import { blogSeo } from '../data/seoData'
 
 export default function BlogPost() {
   const { slug } = useParams()
@@ -12,8 +14,52 @@ export default function BlogPost() {
 
   const more = posts.filter((p) => p.slug !== post.slug).slice(0, 3)
 
+  const author = post.author || {
+    name: 'Hamza Ansari',
+    role: 'Technical Director',
+    bio: 'Software architect and engineering lead at Bitsbay Ltd, specializing in scalable web apps, mobile solutions, and Amazon seller growth systems.',
+  }
+
+  const seo = blogSeo[slug] || {
+    title: `${post.title} | Bitsbay`,
+    description: post.excerpt
+      ? post.excerpt.slice(0, 155)
+      : 'Read the latest industry insights and software engineering guides from the Bitsbay technical team.',
+  }
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: seo.description,
+    image: post.cover ? `https://bitsbayltd.com${post.cover}` : undefined,
+    datePublished: post.date,
+    dateModified: post.updatedDate || post.date,
+    author: {
+      '@type': 'Person',
+      name: author.name,
+      jobTitle: author.role,
+      url: 'https://bitsbayltd.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bitsbay Ltd',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://bitsbayltd.com/logo.png',
+      },
+    },
+  }
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path={`/blog/${post.slug}`}
+        image={post.cover || '/banners/technologies.jpg'}
+        schema={schema}
+      />
       <Banner title={post.title} subtitle={post.date} image={post.cover} uppercaseTitle={false}>
         <Link to="/blog" className="btn-white">
           <ArrowLeft className="h-4 w-4" />
@@ -23,8 +69,26 @@ export default function BlogPost() {
 
       <article className="py-16 sm:py-20 lg:py-[100px]">
         <div className="container-x max-w-3xl">
+          {/* Metadata Bar */}
+          <div className="mb-6 flex flex-wrap items-center gap-4 text-xs font-semibold text-body sm:text-sm">
+            <span className="flex items-center gap-1.5 text-ink">
+              <Calendar className="h-4 w-4 text-brand" />
+              Published: {post.date}
+            </span>
+            {post.updatedDate && (
+              <span className="flex items-center gap-1.5 text-brand">
+                <Clock className="h-4 w-4" />
+                Updated: {post.updatedDate}
+              </span>
+            )}
+            <span className="flex items-center gap-1.5 text-ink">
+              <UserCheck className="h-4 w-4 text-brand" />
+              By {author.name}
+            </span>
+          </div>
+
           <figure className="overflow-hidden border border-line bg-muted r-diag">
-            <img src={post.cover} alt="" className="w-full object-cover" />
+            <img src={post.cover} alt={post.title} className="w-full object-cover" />
           </figure>
 
           <div className="mt-10">
@@ -42,7 +106,7 @@ export default function BlogPost() {
                     <figure className="my-8 overflow-hidden border border-line bg-muted r-diag">
                       <img
                         src={block.src}
-                        alt=""
+                        alt={block.alt || block.text || post.title}
                         loading="lazy"
                         className="w-full object-cover"
                       />
@@ -56,6 +120,21 @@ export default function BlogPost() {
                 </p>
               )
             })}
+          </div>
+
+          {/* Author Card */}
+          <div className="mt-14 border-t border-line pt-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 border border-line bg-white p-6 r-diag">
+              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-brand text-xl font-bold text-white shadow-sm">
+                {author.name.charAt(0)}
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider font-bold text-brand">Written by</p>
+                <h3 className="text-lg font-bold text-ink">{author.name}</h3>
+                <p className="text-xs font-semibold text-body">{author.role}</p>
+                <p className="mt-2 text-sm leading-relaxed text-body">{author.bio}</p>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -79,7 +158,7 @@ export default function BlogPost() {
                 <div className="aspect-[16/9] overflow-hidden bg-muted">
                   <img
                     src={p.cover}
-                    alt=""
+                    alt={p.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

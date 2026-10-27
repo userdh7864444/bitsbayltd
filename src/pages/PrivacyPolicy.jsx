@@ -1,6 +1,8 @@
+import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
 import Reveal from '../components/Reveal'
 import { privacyPolicy as p } from '../data/legal'
+import { staticPagesSeo } from '../data/seoData'
 
 function Bullets({ items }) {
   return (
@@ -16,8 +18,16 @@ function Bullets({ items }) {
 }
 
 export default function PrivacyPolicy() {
+  const seo = staticPagesSeo.privacyPolicy
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/privacy-policy"
+        image="/banners/about.jpg"
+      />
       <PageHeader title={p.title} blurb={p.updated} image="/banners/about.jpg" />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">

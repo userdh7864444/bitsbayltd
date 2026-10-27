@@ -1,14 +1,25 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
+import { staticPagesSeo } from '../data/seoData'
 
 /**
  * The header floats over the page in white, so this page needs the same dark
  * banner every other route has — without it the nav is invisible.
  */
 export default function NotFound() {
+  const seo = staticPagesSeo.notFound
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/404"
+        image="/banners/technologies.jpg"
+        noindex
+      />
       <PageHeader
         title="Page Not Found"
         blurb="The link may be old, or the page moved."

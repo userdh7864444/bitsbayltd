@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import Pillars from '../components/Pillars'
 import About from '../components/About'
@@ -7,9 +8,33 @@ import Legacy from '../components/Legacy'
 import Testimonials from '../components/Testimonials'
 import Industries from '../components/Industries'
 
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Bitsbay Ltd',
+  url: 'https://bitsbayltd.com',
+  logo: 'https://bitsbayltd.com/logo.png',
+  sameAs: [
+    'https://www.linkedin.com/company/bitsbayltd',
+    'https://x.com/Bitsbayltd',
+    'https://www.facebook.com/bitsbayltd',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-904-809-7098',
+    contactType: 'customer service',
+  },
+}
+
 export default function Home() {
   return (
     <>
+      <SEO
+        title="Bitsbay | Custom Web & Mobile App Development Company"
+        description="Bitsbay delivers custom web applications, mobile apps, SaaS platforms, and Amazon growth systems engineered for high performance, scale, and digital impact."
+        path="/"
+        schema={homeSchema}
+      />
       <Hero />
       <Pillars />
       <About />

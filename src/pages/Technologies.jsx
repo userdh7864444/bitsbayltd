@@ -1,16 +1,26 @@
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
 import Reveal, { Stagger, childVariants } from '../components/Reveal'
 import { technologies, technologiesIntro } from '../data/site'
 import { techIcons, techLogos } from '../lib/techIcons'
+import { staticPagesSeo } from '../data/seoData'
 
 /**
  * /technologies/ — centred intro, then one bordered card per technology
  * carrying its brand logo above the name, grouped by category.
  */
 export default function Technologies() {
+  const seo = staticPagesSeo.technologies
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/technologies"
+        image="/banners/technologies.jpg"
+      />
       <PageHeader title={technologiesIntro.eyebrow} image="/banners/technologies.jpg" uppercaseTitle={false} />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">
@@ -46,7 +56,7 @@ export default function Technologies() {
                         {logo ? (
                           <img
                             src={logo}
-                            alt=""
+                            alt={`${t} technology logo`}
                             loading="lazy"
                             className="h-20 w-20 object-contain"
                           />

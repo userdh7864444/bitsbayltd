@@ -12,10 +12,9 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[660px] lg:min-h-[780px]">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <img
-          src={hero.background}
-          alt=""
-          className="h-full w-full object-cover object-center"
+        <div
+          className="h-full w-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${hero.background})` }}
         />
         <div className="absolute inset-0 bg-overlay/72" />
       </div>
@@ -61,10 +60,11 @@ export default function Hero() {
         >
           <img
             src={hero.image}
-            alt="Bitsbay"
-            width={585}
-            height={594}
-            className="w-full max-w-[420px] object-contain"
+            alt="Bitsbay - Custom Software & Amazon Growth Agency"
+            width={420}
+            height={426}
+            fetchPriority="high"
+            className="w-full max-w-[420px] aspect-[420/426] h-auto object-contain"
           />
         </motion.div>
       </div>

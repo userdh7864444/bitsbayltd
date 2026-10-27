@@ -1,3 +1,34 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/amazon-services",             "destination": "/services/amazon",                              "permanent": true },
+    { "source": "/amazon-services/",            "destination": "/services/amazon",                              "permanent": true },
+    { "source": "/services/amazon-services/",   "destination": "/services/amazon-services",                     "permanent": true },
+    { "source": "/ad-services",                 "destination": "/services/ad-services",                         "permanent": true },
+    { "source": "/ad-services/",                "destination": "/services/ad-services",                         "permanent": true },
+    { "source": "/android-app-development",     "destination": "/services/android-app-development",             "permanent": true },
+    { "source": "/android-app-development/",    "destination": "/services/android-app-development",             "permanent": true },
+    { "source": "/ios-app-development",         "destination": "/services/ios-app-development",                 "permanent": true },
+    { "source": "/ios-app-development/",        "destination": "/services/ios-app-development",                 "permanent": true },
+    { "source": "/cross-platform-mobile-app-development",  "destination": "/services/cross-platform-mobile-app-development", "permanent": true },
+    { "source": "/cross-platform-mobile-app-development/", "destination": "/services/cross-platform-mobile-app-development", "permanent": true },
+    { "source": "/custom-web-app",              "destination": "/services/custom-web-app",                      "permanent": true },
+    { "source": "/custom-web-app/",             "destination": "/services/custom-web-app",                      "permanent": true },
+    { "source": "/saas-application-development","destination": "/services/saas-application-development",        "permanent": true },
+    { "source": "/saas-application-development/","destination": "/services/saas-application-development",       "permanent": true },
+    { "source": "/iot-development",             "destination": "/services/iot-development",                     "permanent": true },
+    { "source": "/iot-development/",            "destination": "/services/iot-development",                     "permanent": true },
+    { "source": "/chatbot-development",         "destination": "/services/chatbot-development",                 "permanent": true },
+    { "source": "/chatbot-development/",        "destination": "/services/chatbot-development",                 "permanent": true },
+    { "source": "/staff-augmentation",          "destination": "/services/staff-augmentation",                  "permanent": true },
+    { "source": "/staff-augmentation/",         "destination": "/services/staff-augmentation",                  "permanent": true },
+    { "source": "/about-us",                    "destination": "/about",                                         "permanent": true },
+    { "source": "/about-us/",                   "destination": "/about",                                         "permanent": true },
+    { "source": "/contact-us",                  "destination": "/contact",                                       "permanent": true },
+    { "source": "/contact-us/",                 "destination": "/contact",                                       "permanent": true },
+    { "source": "/blog-post",                   "destination": "/blog",                                          "permanent": true },
+    { "source": "/our-projects",                "destination": "/projects",                                      "permanent": true },
+    { "source": "/our-projects/",               "destination": "/projects",                                      "permanent": true }
+  ]
 }

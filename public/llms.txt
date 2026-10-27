@@ -1,0 +1,19 @@
+# Bitsbay Ltd
+> Software development agency building custom web apps, mobile apps, SaaS platforms, and Amazon seller growth services for businesses in the US, UK and Pakistan.
+
+## Services
+- [App Development](https://bitsbayltd.com/services/app-development): iOS/Android & cross-platform apps
+- [Web Applications](https://bitsbayltd.com/services/web-applications): React, Node, SaaS platforms
+- [Product Engineering](https://bitsbayltd.com/services/product-engineering): MVP to scale
+- [Amazon Services](https://bitsbayltd.com/services/amazon): account management, PPC, listings
+
+## Company
+- [About](https://bitsbayltd.com/about)
+- [Projects / Case studies](https://bitsbayltd.com/projects)
+- [Contact](https://bitsbayltd.com/contact): support@bitsbayltd.com, +1 904 809 7098, +92 333 3810066
+
+## Buyer Guides & Technical Insights
+- [How Much Does a Custom Web App Cost in 2026?](https://bitsbayltd.com/blog/how-much-does-a-custom-web-app-cost-in-2026): Pricing breakdown ($10K-$60K+), MVP budgeting, and cost drivers
+- [How to Fix Amazon Listing Suppression](https://bitsbayltd.com/blog/how-to-fix-amazon-listing-suppression): Step-by-step ASIN recovery, keyword injection fixes, and Buy Box restoration
+- [React vs Next.js for a SaaS MVP](https://bitsbayltd.com/blog/react-vs-nextjs-for-saas-mvp): Architectural comparison for velocity, SEO, and cloud serverless costs
+

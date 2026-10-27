@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
 import { Stagger, childVariants } from '../components/Reveal'
 import { posts } from '../data/blog'
+import { staticPagesSeo } from '../data/seoData'
 
 export default function Blog() {
+  const seo = staticPagesSeo.blog
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/blog"
+        image="/banners/technologies.jpg"
+      />
       <PageHeader title="Blog" image="/banners/technologies.jpg" />
 
       <section className="py-16 sm:py-20 lg:py-[100px]">
@@ -26,7 +36,7 @@ export default function Blog() {
                 <div className="aspect-[16/9] overflow-hidden bg-muted">
                   <img
                     src={p.cover}
-                    alt=""
+                    alt={p.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

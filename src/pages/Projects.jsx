@@ -1,13 +1,23 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
+import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
 import Reveal, { Stagger, childVariants } from '../components/Reveal'
 import { webProjects, mobileProjects } from '../data/site'
+import { staticPagesSeo } from '../data/seoData'
 
 export default function Projects() {
+  const seo = staticPagesSeo.projects
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/projects"
+        image="/banners/projects.jpg"
+      />
       <PageHeader title="Projects" image="/banners/projects.jpg" />
 
       <Gallery label="WEB APPLICATIONS" items={webProjects} />

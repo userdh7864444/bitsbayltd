@@ -120,6 +120,62 @@ export const servicePages = {
           'We follow a well-defined process and development strategy to create Android apps, from brainstorming to the final delivery. Our experts map out the requirements of your business goals and go through several rounds of discussion to ensure that all the bases are covered before the actual development starts.',
         steps: androidProcess,
       },
+      {
+        type: 'results',
+        heading: 'Proven Results from Our Android Projects',
+        entries: [
+          {
+            stat: '4.8★',
+            label: 'Average Play Store rating',
+            detail: 'Our Android apps average a 4.8 star rating across published Play Store listings.',
+          },
+          {
+            stat: '40%',
+            label: 'Faster time-to-market',
+            detail: 'Clients launching with our agile sprints go live 40% faster than industry average.',
+          },
+          {
+            stat: '60+',
+            label: 'Android apps delivered',
+            detail: 'From startup MVPs to enterprise-scale Kotlin apps shipped globally.',
+          },
+        ],
+        links: [
+          { label: 'See AutoMaz case study', to: '/projects/automaz' },
+          { label: 'Cross-platform alternatives', to: '/services/cross-platform-mobile-app-development' },
+          { label: 'How we build products', to: '/services/product-engineering' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'Android App Development FAQs',
+        items: [
+          {
+            title: 'How long does it take to build an Android app?',
+            body: 'A simple Android app typically takes 8–12 weeks. More complex apps with custom backends, payment flows, or real-time features take 16–24 weeks. We scope every project before quoting a timeline.',
+          },
+          {
+            title: 'What programming languages do you use for Android?',
+            body: 'We build primarily in Kotlin, the modern officially-supported language, with Java for legacy codebases. For cross-platform projects we also use Flutter (Dart).',
+          },
+          {
+            title: 'How much does Android app development cost?',
+            body: 'Costs start at ~$8,000 for a focused MVP and scale to $40,000+ for enterprise apps with complex integrations. We offer fixed-price, time-and-material, and monthly retainer models.',
+          },
+          {
+            title: 'Do you provide post-launch support?',
+            body: 'Yes. All projects include a 30-day bug-fix warranty. We also offer ongoing maintenance retainers covering OS updates, feature additions, and performance monitoring.',
+          },
+          {
+            title: 'Will I own the source code?',
+            body: 'Absolutely. Upon final payment you receive full source code ownership, all credentials, and complete handover documentation.',
+          },
+          {
+            title: 'Can you build both the app and the backend API?',
+            body: 'Yes — we are a full-stack team. We build Node.js / Python backends, REST and GraphQL APIs, and cloud infrastructure on AWS or GCP alongside every mobile app.',
+          },
+        ],
+      },
     ],
   },
 
@@ -202,6 +258,58 @@ export const servicePages = {
           },
         ],
       },
+      {
+        type: 'results',
+        heading: 'iOS Development Results at a Glance',
+        entries: [
+          {
+            stat: '4.9★',
+            label: 'Average App Store rating',
+            detail: 'Our iOS apps consistently earn top ratings through polished UI and rigorous QA.',
+          },
+          {
+            stat: '35%',
+            label: 'Higher retention vs industry avg',
+            detail: 'Our UX-first approach keeps users engaged and returning.',
+          },
+          {
+            stat: '50+',
+            label: 'iPhone & iPad apps shipped',
+            detail: 'Across retail, logistics, fintech, and social platforms.',
+          },
+        ],
+        links: [
+          { label: 'Android alternative', to: '/services/android-app-development' },
+          { label: 'Cross-platform (Flutter / React Native)', to: '/services/cross-platform-mobile-app-development' },
+          { label: 'View mobile projects', to: '/projects' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'iOS App Development FAQs',
+        items: [
+          {
+            title: 'How much does iOS app development cost?',
+            body: 'iOS apps start at around $10,000 for a lean MVP and range to $50,000+ for feature-rich apps with complex data or Apple Pay integrations. We provide a fixed-price quote before any work begins.',
+          },
+          {
+            title: 'How long does iOS development take?',
+            body: 'Simple apps take 8–14 weeks; complex apps with custom APIs, push notifications, and in-app purchases typically take 16–28 weeks.',
+          },
+          {
+            title: 'Do you build for both iPhone and iPad?',
+            body: 'Yes. Our Swift apps are built with adaptive layouts using Auto Layout and SwiftUI that work perfectly across all iPhone and iPad screen sizes.',
+          },
+          {
+            title: 'Can you integrate Apple Pay, Face ID, or HealthKit?',
+            body: 'Yes. We regularly integrate Apple platform frameworks including StoreKit, HealthKit, ARKit, CoreML, Sign in with Apple, and Wallet/Apple Pay.',
+          },
+          {
+            title: 'Will you submit the app to the App Store for us?',
+            body: 'Yes. We handle the full App Store submission, including screenshots, metadata, age ratings, and any review correspondence needed to get your app approved.',
+          },
+        ],
+      },
     ],
   },
 
@@ -274,6 +382,58 @@ export const servicePages = {
           },
         ],
       },
+      {
+        type: 'results',
+        heading: 'Proven Cross-Platform Performance',
+        entries: [
+          {
+            stat: '50%',
+            label: 'Lower development cost',
+            detail: 'Single codebase for both iOS and Android reduces initial build and ongoing maintenance budgets by up to 50%.',
+          },
+          {
+            stat: '2x',
+            label: 'Faster release cycles',
+            detail: 'Ship features and hotfixes simultaneously to Google Play and Apple App Store without team bottlenecks.',
+          },
+          {
+            stat: '60fps',
+            label: 'Native-feel performance',
+            detail: 'Using modern Flutter and React Native architectures with GPU acceleration and native bridge optimizations.',
+          },
+        ],
+        links: [
+          { label: 'Explore Android development', to: '/services/android-app-development' },
+          { label: 'Explore iOS development', to: '/services/ios-app-development' },
+          { label: 'View our mobile projects', to: '/projects' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'Cross-Platform App Development FAQs',
+        items: [
+          {
+            title: 'Is cross-platform development as good as native development?',
+            body: 'For 90% of business applications, yes. Modern frameworks like Flutter and React Native compile to native ARM code and deliver near-native 60fps performance while cutting development and maintenance costs in half.',
+          },
+          {
+            title: 'Should I choose Flutter or React Native for my project?',
+            body: 'Flutter is ideal for apps requiring pixel-perfect custom UI designs and high animation performance across platforms. React Native is preferred if you have an existing web React codebase or need deep integration with specific native libraries.',
+          },
+          {
+            title: 'How much does a cross-platform mobile app cost?',
+            body: 'Cross-platform apps typically cost between $9,000 and $35,000 depending on complexity, compared to $18,000–$70,000 for separate native iOS and Android apps.',
+          },
+          {
+            title: 'Can cross-platform apps access device hardware like camera, GPS, and Bluetooth?',
+            body: 'Yes. Both Flutter and React Native provide robust native bridge plugins to interact with cameras, biometric authentication, GPS location, push notifications, and Bluetooth sensors.',
+          },
+          {
+            title: 'Do you manage submission to both Google Play and Apple App Store?',
+            body: 'Yes, our team handles the end-to-end publishing process on both platforms, ensuring strict compliance with Google and Apple developer guidelines.',
+          },
+        ],
+      },
     ],
   },
 
@@ -322,6 +482,58 @@ export const servicePages = {
           {
             title: 'Prototyping',
             body: "We create a visualization of the concept to carefully evaluate the application's feasibility in terms of real implementation, technical challenges, and the assessment of the long-term potential of the web application.",
+          },
+        ],
+      },
+      {
+        type: 'results',
+        heading: 'Proven Custom Web App Delivery',
+        entries: [
+          {
+            stat: '99.9%',
+            label: 'Uptime reliability',
+            detail: 'Engineered on resilient cloud architecture (AWS / GCP / Vercel) with automated CI/CD and disaster recovery.',
+          },
+          {
+            stat: '3x',
+            label: 'Performance acceleration',
+            detail: 'Lighthouse score optimizations, server-side caching, and modern frontend tooling deliver sub-second response times.',
+          },
+          {
+            stat: '85+',
+            label: 'Web applications launched',
+            detail: 'From internal ERP dashboards and B2B portals to public-facing platforms and consumer marketplaces.',
+          },
+        ],
+        links: [
+          { label: 'Explore SaaS development', to: '/services/saas-application-development' },
+          { label: 'Frontend development services', to: '/services/front-end-development-services' },
+          { label: 'View web projects portfolio', to: '/projects' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'Custom Web Application FAQs',
+        items: [
+          {
+            title: 'How much does a custom web application cost in 2026?',
+            body: 'A focused MVP web app typically ranges from $10,000 to $25,000. Larger enterprise-grade portals and custom software systems with complex data layers, roles, and integrations start from $30,000+. We provide transparent itemized scopes.',
+          },
+          {
+            title: 'What tech stack do you use for web applications?',
+            body: 'Our primary stack includes React, Next.js, and Vue.js on the frontend, with Node.js, Express, Python (FastAPI/Django), and PostgreSQL/MongoDB on the backend, hosted on AWS, GCP, or Vercel.',
+          },
+          {
+            title: 'How long does custom web application development take?',
+            body: 'Standard web apps take 10–16 weeks from discovery to deployment. Iterative sprint releases allow you to test and demo working software every two weeks.',
+          },
+          {
+            title: 'How do you ensure data security and compliance?',
+            body: 'We implement OWASP top 10 best practices, role-based access control (RBAC), TLS encryption in transit and at rest, and secure OAuth2/JWT token authentication.',
+          },
+          {
+            title: 'Who owns the intellectual property and code?',
+            body: 'You retain 100% ownership of all source code, database schemas, and intellectual property generated during the engagement upon milestone completion.',
           },
         ],
       },
@@ -555,6 +767,58 @@ export const servicePages = {
           {
             title: 'Maintenance',
             body: 'Post app launch, we deliver consistent maintenance, quality support, timely updates, and enhancement services as required.',
+          },
+        ],
+      },
+      {
+        type: 'results',
+        heading: 'SaaS Engineering Metrics',
+        entries: [
+          {
+            stat: '10x',
+            label: 'Infrastructure scalability',
+            detail: 'Multi-tenant cloud databases and containerized microservices ready to scale from zero to tens of thousands of active tenants.',
+          },
+          {
+            stat: '<200ms',
+            label: 'Global API latency',
+            detail: 'Edge CDN routing and distributed database caching deliver rapid response times worldwide.',
+          },
+          {
+            stat: '30+',
+            label: 'SaaS platforms shipped',
+            detail: 'B2B subscription platforms, analytics suites, and AI workflow tools built for global founders.',
+          },
+        ],
+        links: [
+          { label: 'Custom web app development', to: '/services/custom-web-app' },
+          { label: 'Lean product development & MVP', to: '/services/learn-product-development' },
+          { label: 'View our case studies', to: '/projects' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'SaaS Development FAQs',
+        items: [
+          {
+            title: 'What is the typical cost to build a SaaS MVP?',
+            body: 'A production-grade SaaS MVP with user auth, subscription billing (Stripe), tenant isolation, and primary workflows generally costs between $15,000 and $35,000.',
+          },
+          {
+            title: 'How do you handle multi-tenancy and data isolation?',
+            body: 'Depending on compliance and scale needs, we implement schema-per-tenant, row-level security (RLS) in PostgreSQL, or database-per-tenant architectures to guarantee strict tenant isolation.',
+          },
+          {
+            title: 'Can you integrate payment providers like Stripe and Lemon Squeezy?',
+            body: 'Yes. We build full subscription management systems including recurring billing, tiered pricing, coupon codes, usage-based metering, and customer self-serve portals.',
+          },
+          {
+            title: 'How do you structure the development timeline for a SaaS MVP?',
+            body: 'We typically break development into 2-week agile sprints: Discovery (weeks 1–2), Core Architecture & Auth (weeks 3–4), Primary Feature Workflows (weeks 5–8), QA & Billing (weeks 9–10), and Launch Prep (weeks 11–12).',
+          },
+          {
+            title: 'Do you provide DevOps and continuous monitoring?',
+            body: 'Yes, we set up automated CI/CD pipelines, Sentry error monitoring, Datadog/CloudWatch metrics, and automated daily backups on AWS, GCP, or DigitalOcean.',
           },
         ],
       },
@@ -1018,6 +1282,54 @@ export const servicePages = {
           },
         ],
       },
+      {
+        type: 'results',
+        heading: 'Mobile Engineering Impact',
+        entries: [
+          {
+            stat: '110+',
+            label: 'Mobile apps deployed',
+            detail: 'Published across Google Play and Apple App Store in consumer, fintech, healthcare, and enterprise sectors.',
+          },
+          {
+            stat: '4.85★',
+            label: 'Average store rating',
+            detail: 'Consistently high ratings across live production deployments driven by UX polish and automated QA.',
+          },
+          {
+            stat: '99.9%',
+            label: 'Crash-free sessions',
+            detail: 'Rigorous unit testing and exception tracking via Firebase Crashlytics and Sentry.',
+          },
+        ],
+        links: [
+          { label: 'Native Android development', to: '/services/android-app-development' },
+          { label: 'Native iOS development', to: '/services/ios-app-development' },
+          { label: 'Cross-platform mobile apps', to: '/services/cross-platform-mobile-app-development' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'Mobile App Development FAQs',
+        items: [
+          {
+            title: 'Should I choose native (iOS/Android) or cross-platform (Flutter/React Native)?',
+            body: 'Choose native if your app relies heavily on device-specific hardware features, low-level APIs, or requires maximum raw processing speed. Choose cross-platform if you want to launch on both platforms faster and save 40-50% on development costs.',
+          },
+          {
+            title: 'What does a complete mobile app development engagement include?',
+            body: 'Our full-cycle mobile service includes product discovery, UI/UX prototyping, backend API development, cloud database setup, mobile app programming, QA testing, and app store submission.',
+          },
+          {
+            title: 'How do you handle ongoing maintenance and OS updates?',
+            body: 'We offer monthly maintenance retainers covering new Android and iOS major version compatibility, third-party library updates, security patches, and ongoing performance optimization.',
+          },
+          {
+            title: 'Do you help with App Store Optimization (ASO)?',
+            body: 'Yes, we optimize store listings with relevant keywords, localized descriptions, branded screenshots, and promotional previews to maximize organic store discovery.',
+          },
+        ],
+      },
     ],
   },
 
@@ -1047,6 +1359,54 @@ export const servicePages = {
             title: 'Front End Development Services',
             body: 'For front end development, features like efficiency, scalability and convenience go hand in hand with ReactJS…..',
             to: '/services/front-end-development-services',
+          },
+        ],
+      },
+      {
+        type: 'results',
+        heading: 'Web Engineering at Scale',
+        entries: [
+          {
+            stat: '150+',
+            label: 'Web platforms built',
+            detail: 'From high-traffic marketing portals to complex SaaS architectures and custom ERP solutions.',
+          },
+          {
+            stat: '<1s',
+            label: 'Average initial load time',
+            detail: 'Optimized via Vite, Next.js, Edge CDN caching, and modern asset bundling.',
+          },
+          {
+            stat: '100%',
+            label: 'Responsive on all viewports',
+            detail: 'Fluid design systems that look and perform flawlessly on mobile, tablet, and desktop.',
+          },
+        ],
+        links: [
+          { label: 'Custom web apps', to: '/services/custom-web-app' },
+          { label: 'Progressive web apps (PWAs)', to: '/services/progressive-web-apps' },
+          { label: 'Frontend development', to: '/services/front-end-development-services' },
+        ],
+      },
+      {
+        type: 'faq',
+        heading: 'Web Application Development FAQs',
+        items: [
+          {
+            title: 'What is the difference between a website and a web application?',
+            body: 'A website is primarily informational and static, whereas a web application is interactive, dynamic, and software-driven with user accounts, database interactions, business logic, and API integrations.',
+          },
+          {
+            title: 'Can you migrate our legacy web application to modern frameworks?',
+            body: 'Yes. We specialize in refactoring and migrating legacy codebases (PHP, AngularJS, ASP.NET) to modern stacks like React, Next.js, Node.js, and TypeScript without service downtime.',
+          },
+          {
+            title: 'What cloud providers do you support for web hosting?',
+            body: 'We deploy and manage web applications across AWS (ECS, Lambda, S3, RDS), Google Cloud Platform (GCP), DigitalOcean, and Vercel depending on workload and budget.',
+          },
+          {
+            title: 'How do we collaborate during development?',
+            body: 'We work in two-week agile sprints. You receive staging preview links for every build, sprint reviews, and direct communication with developers via Slack or MS Teams.',
           },
         ],
       },

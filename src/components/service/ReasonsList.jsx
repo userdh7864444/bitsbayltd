@@ -29,7 +29,7 @@ export default function ReasonsList({ section }) {
             <Reveal>
               <img
                 src={image}
-                alt=""
+                alt={heading || 'Why choose Bitsbay'}
                 loading="lazy"
                 className="mx-auto w-full max-w-md object-contain"
               />

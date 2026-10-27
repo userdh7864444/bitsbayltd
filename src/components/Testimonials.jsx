@@ -48,10 +48,9 @@ export default function Testimonials() {
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-[100px]">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <img
-          src="/banners/testimonials.webp"
-          alt=""
-          className="h-full w-full object-cover"
+        <div
+          className="h-full w-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/banners/testimonials.webp')" }}
         />
         <div className="absolute inset-0 bg-overlay/92" />
       </div>

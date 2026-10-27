@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import { getIcon } from '../lib/icons'
 import ServiceHero from '../components/service/ServiceHero'
 import Reveal, { Stagger, childVariants } from '../components/Reveal'
+import ResultsBlock from '../components/service/ResultsBlock'
+import FaqBlock from '../components/service/FaqBlock'
+import { serviceSeo } from '../data/seoData'
 
 const models = [
   {
@@ -37,8 +41,29 @@ const solutions = [
 ]
 
 export default function StaffAugmentation() {
+  const seo = serviceSeo['staff-augmentation']
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: seo.serviceType,
+    provider: {
+      '@type': 'Organization',
+      name: 'Bitsbay Ltd',
+      url: 'https://bitsbayltd.com',
+    },
+    areaServed: ['US', 'UK', 'PK', 'Global'],
+    serviceType: seo.serviceType,
+  }
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/services/staff-augmentation"
+        image="/hero/staff-augmentation.jpg"
+        schema={schema}
+      />
       <ServiceHero
         title="Staff Augmentation"
         subtitle="Enhance Your Team's Expertise with Trusted Professionals"
@@ -120,7 +145,7 @@ export default function StaffAugmentation() {
               <figure className="overflow-hidden border border-line bg-muted r-diag">
                 <img
                   src="/staff/overview.avif"
-                  alt=""
+                  alt="Bitsbay dedicated engineering team overview"
                   loading="lazy"
                   className="w-full object-cover"
                 />
@@ -149,7 +174,7 @@ export default function StaffAugmentation() {
             <figure className="overflow-hidden border border-line bg-muted r-diag">
               <img
                 src="/staff/img-2.png"
-                alt=""
+                alt="Bitsbay remote developers collaborating on software sprint"
                 loading="lazy"
                 className="w-full object-cover"
               />
@@ -158,6 +183,62 @@ export default function StaffAugmentation() {
         </div>
       </section>
 
+      <ResultsBlock
+        section={{
+          heading: 'Proven Staff Augmentation Impact',
+          subheading: 'Accelerate development velocity with on-demand engineering squads.',
+          entries: [
+            {
+              stat: '72 hrs',
+              label: 'Average time to match',
+              detail: 'Pre-vetted senior software engineers, QA leads, and cloud architects ready for rapid onboarding.',
+            },
+            {
+              stat: '95%+',
+              label: 'Retention on engagements',
+              detail: 'Dedicated developer allocation with minimal churn across multi-month and multi-year projects.',
+            },
+            {
+              stat: '60%',
+              label: 'Cost savings vs US onshore hiring',
+              detail: 'Eliminate recruiting fees, payroll overhead, and equipment costs while keeping full timezone overlap.',
+            },
+          ],
+          links: [
+            { label: 'Explore Web Applications', to: '/services/web-applications' },
+            { label: 'Explore App Development', to: '/services/app-development' },
+            { label: 'View our tech stack', to: '/technologies' },
+          ],
+        }}
+      />
+
+      <FaqBlock
+        section={{
+          heading: 'Staff Augmentation FAQs',
+          entries: [
+            {
+              title: 'How does staff augmentation work at Bitsbay?',
+              body: 'We match you with pre-vetted senior developers who join your existing workflows, communicate directly via your Slack/Teams, and commit code directly to your repositories.',
+            },
+            {
+              title: 'How quickly can augmented developers start?',
+              body: 'Typically within 48 to 72 hours for standard tech stacks (React, Node, Python, Kotlin, Swift, Flutter, AWS).',
+            },
+            {
+              title: 'Can we interview developers before hiring?',
+              body: 'Yes. You interview candidates, review their past GitHub code, and evaluate their fit before making any commitment.',
+            },
+            {
+              title: 'What happens if a developer is not a good fit?',
+              body: 'We offer a no-questions-asked replacement guarantee within the first two weeks of engagement.',
+            },
+            {
+              title: 'What time zones do your developers work in?',
+              body: 'Our developers accommodate flexible shifts to provide 4–6 hours of direct working overlap with US Eastern, Pacific, and European working hours.',
+            },
+          ],
+        }}
+      />
     </>
   )
 }

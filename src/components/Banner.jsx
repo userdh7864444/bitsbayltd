@@ -29,7 +29,10 @@ export default function Banner({
     >
       <div aria-hidden className="absolute inset-0 -z-10">
         {image && (
-          <img src={image} alt="" className="h-full w-full object-cover object-center" />
+          <div
+            className="h-full w-full bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+          />
         )}
         <div className="absolute inset-0 bg-overlay/72" />
       </div>

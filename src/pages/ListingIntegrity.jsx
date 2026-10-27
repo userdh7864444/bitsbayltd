@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import SEO from '../components/SEO'
 import Banner from '../components/Banner'
+import { serviceSeo } from '../data/seoData'
 import {
   ArrowRight,
   ShieldCheck,
@@ -168,8 +170,34 @@ const plans = [
 const icons = { Link2, Database, Zap, Bell, RefreshCw }
 
 export default function ListingIntegrity() {
+  const seo = serviceSeo['listing-integrity']
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Amazon Listing Integrity & Compliance Shield',
+    operatingSystem: 'Cloud / Web',
+    applicationCategory: 'BusinessApplication',
+    provider: {
+      '@type': 'Organization',
+      name: 'Bitsbay Ltd',
+      url: 'https://bitsbayltd.com',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '239',
+      priceCurrency: 'USD',
+    },
+  }
+
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path="/products/listing-integrity"
+        image="/listing/hero.jpg"
+        schema={schema}
+      />
       {/* Hero */}
       <Banner
         title="Protect Your Amazon Listings Before Violations Hurt You"
