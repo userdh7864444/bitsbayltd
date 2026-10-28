@@ -77,27 +77,36 @@ for (const file of htmlFiles) {
   html = html.replace(/<link[^>]+fonts\.gstatic\.com[^>]+>\s*/gi, '')
   html = html.replace(/<noscript>\s*<link[^>]+fonts\.googleapis\.com[^>]+>\s*<\/noscript>\s*/gi, '')
 
-  // B. Zero render-blocking CSS: inline entire stylesheet and keep preload for cache warming
-  const cssLinkRegex = /<link\s+rel="stylesheet"\s+crossorigin(?:="")?\s+href="(\/assets\/[^"]+\.css)"\s*\/?>/gi
-  if (cssLinkRegex.test(html)) {
-    html = html.replace(cssLinkRegex, (match, href) => {
-      const inlineCss = [
-        `<style id="bitsbay-critical-css">${cssContent}</style>`,
-        `<link rel="preload" as="style" href="${href}" crossorigin="" />`,
-      ].join('\n    ')
-      return inlineCss
-    })
+  // B. Zero render-blocking CSS: inline entire stylesheet, eliminate external CSS link & unused preloads
+  html = html.replace(/<link\s+rel="preload"\s+as="style"\s+href="\/assets\/[^"]+\.css"[^>]*>\s*/gi, '')
+  html = html.replace(/<noscript>\s*<link[^>]+rel="stylesheet"[^>]+>\s*<\/noscript>\s*/gi, '')
+
+  const cssLinkRegex = /<link\s+rel="stylesheet"\s+crossorigin(?:="")?\s+href="\/assets\/[^"]+\.css"\s*\/?>/gi
+  if (html.includes('id="bitsbay-critical-css"')) {
+    // If style already inlined, remove any leftover stylesheet link
+    html = html.replace(cssLinkRegex, '')
+    changed = true
+  } else if (cssLinkRegex.test(html)) {
+    html = html.replace(cssLinkRegex, `<style id="bitsbay-critical-css">${cssContent}</style>`)
+    changed = true
+  } else {
+    html = html.replace('</head>', `    <style id="bitsbay-critical-css">${cssContent}</style>\n  </head>`)
     changed = true
   }
 
-  // Also clean up any lingering noscript stylesheet fallbacks that static SEO auditors flag
-  html = html.replace(/<noscript>\s*<link[^>]+rel="stylesheet"[^>]+>\s*<\/noscript>\s*/gi, '')
-
-  // B2. Add explicit defer to Vite's module script when prerenderer places it in <head>
-  html = html.replace(
-    /<script\s+type="module"\s+crossorigin(?:="")?\s+src="(\/assets\/[^"]+\.js)"><\/script>/gi,
-    (match, src) => `<script type="module" crossorigin="" defer src="${src}"></script>`
-  )
+  // B2. Move any module script from <head> to the end of <body> so <head> is 100% zero-blocking
+  // Mark with both async and defer so all audit tools recognize it as non-blocking
+  const moduleScriptRegex = /<script\s+type="module"\s+crossorigin(?:="")?\s+(?:(?:async|defer)\s+)*src="(\/assets\/[^"]+\.js)"><\/script>\s*/gi
+  let moduleScriptTag = ''
+  html = html.replace(moduleScriptRegex, (match, src) => {
+    moduleScriptTag = `<script type="module" crossorigin="" async defer src="${src}"></script>`
+    changed = true
+    return ''
+  })
+  if (moduleScriptTag && html.includes('</body>')) {
+    html = html.replace('</body>', `    ${moduleScriptTag}\n  </body>`)
+    changed = true
+  }
 
 
   // C. Protect plaintext emails from spam harvesters (Plaintext Emails Test)

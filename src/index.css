@@ -228,6 +228,16 @@
     animation: marquee 28s linear infinite reverse;
   }
 
+  .hero-bg-responsive {
+    background-image: url('/banners/hero-bg.webp');
+  }
+
+  @media (max-width: 768px) {
+    .hero-bg-responsive {
+      background-image: url('/banners/hero-bg-mobile.webp') !important;
+    }
+  }
+
 }
 
 @keyframes marquee {

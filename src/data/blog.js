@@ -51,7 +51,7 @@ export const posts = [
     "slug": "impact-of-artificial-intelligence-on-everyday-life",
     "title": "Impact of Artificial Intelligence on Everyday Life",
     "date": "October 30, 2025",
-    "cover": "/blog/ai.png",
+    "cover": "/blog/ai.webp",
     "category": "Blog",
     "excerpt": "It is in human nature we are eager to know about modern technologies and changes happening around the world. Every single day technicians are trying to create advanced features and tools that will make our lives easier. Just like that most people already know about artificial intelligence which is commonly used as AI by people worldwide. It has completely changed our concepts and helped us to get more knowledge related to the modern world which is full of wonders. The problems that are completely impossible for a human brain to solve with the use of this technology will make it easier to resolve all the errors within a minute. Now it becomes a part of daily life and routine. No matter where you are or what you are doing you can get a whole new vibe by exploring its evolutionary filters, editors, and adjustments.",
     "body": [
@@ -85,7 +85,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Positive.e27293e4b054d26fec5a-1024x537.jpg"
+        "src": "/blog/Positive.e27293e4b054d26fec5a-1024x537.webp"
       },
       {
         "type": "h",
@@ -105,7 +105,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Improves.png"
+        "src": "/blog/Improves.webp"
       },
       {
         "type": "h",
@@ -125,7 +125,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Negative.c44053e9bd854ddccf8d-1024x577.jpg"
+        "src": "/blog/Negative.c44053e9bd854ddccf8d-1024x577.webp"
       },
       {
         "type": "h",
@@ -145,7 +145,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Environmental.d977f9d43c511b0a6fc2-1024x682.jpg"
+        "src": "/blog/Environmental.d977f9d43c511b0a6fc2-1024x682.webp"
       },
       {
         "type": "h",
@@ -165,7 +165,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Final.png"
+        "src": "/blog/Final.webp"
       }
     ]
   },
@@ -173,7 +173,7 @@ export const posts = [
     "slug": "what-can-we-achieve-by-merging-ai-and-cryptocurrency",
     "title": "What can we achieve by merging AI and Cryptocurrency?",
     "date": "October 30, 2025",
-    "cover": "/blog/crypto.jpg",
+    "cover": "/blog/crypto.webp",
     "category": "Blog",
     "excerpt": "Every day we are getting introduced to modern technologies that are fun and help us improve our skills to earn money. Isn’t it easy to get all the latest updates by using a platform that will give you access to all the information you need to start a business? There are a lot of articles and news related to AI and cryptocurrency. Most businessmen and sellers already use this high-tech knowledge to gain global recognition and profits. In other words, it can be explained as you investing in something in international shareholders’ markets that come with digital currency and a modern virtual accounting system. AI can also add more magic to it because it has all the modernized features, tools, and advancements that will help you in launching a brand in less time.",
     "body": [
@@ -191,7 +191,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/AI.cf21fa23bb2e651bf004-1024x512.jpg"
+        "src": "/blog/AI.cf21fa23bb2e651bf004-1024x512.webp"
       },
       {
         "type": "h",
@@ -231,7 +231,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Automated.jpg"
+        "src": "/blog/Automated.webp"
       },
       {
         "type": "h",
@@ -255,7 +255,7 @@ export const posts = [
     "slug": "amazon-tools",
     "title": "Amazon Tools",
     "date": "October 30, 2025",
-    "cover": "/blog/amazon-tools.png",
+    "cover": "/blog/amazon-tools.webp",
     "category": "Blog",
     "excerpt": "In this modern world, everyone wants to do less work with less effort. All thanks to advanced technologies now it become easier for all of us to showcase our business skills. Back in the past, we were not able to use our skills in the right way to get more profits. But, now we have so many opportunities and strategies that will surely help us to start a business with more income. With just a single click, you will get a list of innovative techniques, and with the help of these modernized appliances, you can start up your online business. While explaining these things how can we forget to mention “Amazon.” No one in the world is not familiar with the word “Amazon” and when you search about it you will able to understand to use your ideas related to business in the right way.",
     "body": [
@@ -273,7 +273,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/tools.png"
+        "src": "/blog/tools.webp"
       },
       {
         "type": "h",
@@ -293,7 +293,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Market.54e7ee597c4b4a063275-1024x683.png"
+        "src": "/blog/Market.54e7ee597c4b4a063275-1024x683.webp"
       },
       {
         "type": "h",
@@ -313,7 +313,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/pricing.3f89ee8af03a71b6490d-1024x683.jpg"
+        "src": "/blog/pricing.3f89ee8af03a71b6490d-1024x683.webp"
       },
       {
         "type": "h",
@@ -333,7 +333,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/Description.jpg"
+        "src": "/blog/Description.webp"
       },
       {
         "type": "h",
@@ -483,7 +483,7 @@ export const posts = [
     "slug": "the-power-of-analytics",
     "title": "The Power of Analytics",
     "date": "October 28, 2025",
-    "cover": "/blog/analytics.png",
+    "cover": "/blog/analytics.webp",
     "category": "Blog",
     "excerpt": "Many technologies are introduced to all of us to make a proper plan and pass it through different procedures to get better results. Modern inventions are not only for developers but also people from different places around the world can change their way of living. That is why, people are more into digital marketing, investing in different international markets, showcasing their talents, and many more to earn money in less time.No matter what you do, if you have a cell phone then you can easily start a business or become a socia media handler, and an entrepreneur depends on you. But before that, you should prepare yourself to face every challenge with patience and test your products by passing them through so many procedures. After that, share it with others to get profits more than you think and get better customer support.",
     "body": [
@@ -521,7 +521,7 @@ export const posts = [
       },
       {
         "type": "img",
-        "src": "/blog/andvantage.jpg"
+        "src": "/blog/andvantage.webp"
       },
       {
         "type": "h",
@@ -615,7 +615,7 @@ export const posts = [
       role: "Technical Director & Software Architect",
       bio: "Full-stack software architect leading engineering teams at Bitsbay Ltd, specializing in scalable web apps, cloud infrastructure, and Amazon SP-API tools."
     },
-    cover: "/banners/technologies.jpg",
+    cover: "/banners/technologies.webp",
     category: "Web Development",
     excerpt: "A comprehensive 2026 guide to custom web application development costs, breaking down pricing tiers from MVP ($10,000–$25,000) to enterprise portals ($50,000+), hourly rates, and key cost drivers.",
     body: [
@@ -743,7 +743,7 @@ export const posts = [
       role: "Technical Director & Software Architect",
       bio: "Full-stack software architect leading engineering teams at Bitsbay Ltd, specializing in scalable web apps, cloud infrastructure, and Amazon SP-API tools."
     },
-    cover: "/banners/about.jpg",
+    cover: "/banners/about.webp",
     category: "Engineering & Tech",
     excerpt: "An architect’s comparison of plain React (Vite) versus Next.js App Router for building a SaaS MVP, covering development velocity, SEO, serverless complexity, and cloud costs.",
     body: [

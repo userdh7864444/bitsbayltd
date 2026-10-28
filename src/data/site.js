@@ -5,8 +5,8 @@
 export const brand = {
   name: 'Bitsbay',
   logo: '/logo.png',
-  logoIcon: '/logo-icon-150.png',
-  heroLogo: '/hero-logo.png',
+  logoIcon: '/logo-icon.webp',
+  heroLogo: '/hero-logo.webp',
   upwork:
     'https://www.upwork.com/agencies/bitsbay/?companyReference=1329413591024889856',
 }
@@ -254,7 +254,7 @@ export const webProjects = [
     heading: 'SEIZED',
     tag: 'E-Commerce',
     category: 'Web Application',
-    image: '/projects/seized.png',
+    image: '/projects/seized.webp',
     clientType: 'Interactive Gaming & E-Commerce',
     description:
       'PlaySiezd is a gaming e-commerce platform where users purchase items by participating in live interactive games, with entry charges dynamically adjusting to live market valuations.',
@@ -268,7 +268,7 @@ export const webProjects = [
       'Zero transaction discrepancies or double-spend incidents',
     ],
     stack: 'React js, Firebase, Firestore',
-    shots: ['/shots/seized-1.png', '/shots/seized-2.png', '/shots/seized-3.png'],
+    shots: ['/shots/seized-1.webp', '/shots/seized-2.webp', '/shots/seized-3.webp'],
   },
   {
     slug: 'courier-label',
@@ -276,7 +276,7 @@ export const webProjects = [
     heading: 'COURIER LABEL',
     tag: 'Logistics',
     category: 'Web Application',
-    image: '/projects/courier-label.png',
+    image: '/projects/courier-label.webp',
     clientType: 'B2B Logistics & Supply Chain',
     description:
       'Automated multi-carrier shipping label generation and parcel dispatch portal designed to streamline high-volume fulfillment and unlock commercial volume discounts.',
@@ -291,11 +291,11 @@ export const webProjects = [
     ],
     stack: 'React.js, MongoDB, Node.js, Express.js',
     shots: [
-      '/shots/courier-1.png',
-      '/shots/courier-2.png',
-      '/shots/courier-3.png',
-      '/shots/courier-4.png',
-      '/shots/courier-5.png',
+      '/shots/courier-1.webp',
+      '/shots/courier-2.webp',
+      '/shots/courier-3.webp',
+      '/shots/courier-4.webp',
+      '/shots/courier-5.webp',
     ],
   },
   {
@@ -304,7 +304,7 @@ export const webProjects = [
     heading: 'ECommSync',
     tag: 'E-Commerce',
     category: 'Web Application',
-    image: '/projects/ecommsync.png',
+    image: '/projects/ecommsync.webp',
     clientType: 'Multi-Channel Online Retailer',
     description:
       'Centralized multi-channel inventory management software synchronizing stock counts, order feeds, and delivery states across Amazon, eBay, and independent stores.',
@@ -319,10 +319,10 @@ export const webProjects = [
     ],
     stack: 'React.js, MongoDB, MERN Stack, Node.js',
     shots: [
-      '/shots/ecommsync-1.png',
-      '/shots/ecommsync-2.png',
-      '/shots/ecommsync-3.png',
-      '/shots/ecommsync-4.png',
+      '/shots/ecommsync-1.webp',
+      '/shots/ecommsync-2.webp',
+      '/shots/ecommsync-3.webp',
+      '/shots/ecommsync-4.webp',
     ],
   },
   {
@@ -331,7 +331,7 @@ export const webProjects = [
     heading: 'SKU SNAP',
     tag: 'E-Commerce',
     category: 'Web Application',
-    image: '/projects/skusnap.png',
+    image: '/projects/skusnap.webp',
     clientType: 'Wholesale Hardware & IT Distributor',
     description:
       'High-throughput distributor integration platform connecting commercial wholesalers directly with top distributors including Ingram Micro and Synnex for automated procurement.',
@@ -346,11 +346,11 @@ export const webProjects = [
     ],
     stack: 'React.js, MongoDB, MERN Stack, Node.js',
     shots: [
-      '/shots/skusnap-1.png',
-      '/shots/skusnap-2.png',
-      '/shots/skusnap-3.png',
-      '/shots/skusnap-4.png',
-      '/shots/skusnap-5.png',
+      '/shots/skusnap-1.webp',
+      '/shots/skusnap-2.webp',
+      '/shots/skusnap-3.webp',
+      '/shots/skusnap-4.webp',
+      '/shots/skusnap-5.webp',
     ],
   },
   {
@@ -359,7 +359,7 @@ export const webProjects = [
     heading: 'A5',
     tag: 'E-Commerce',
     category: 'Web Application',
-    image: '/projects/a5.png',
+    image: '/projects/a5.webp',
     clientType: 'Omnichannel Retail Enterprise',
     description:
       'All-in-one omnichannel retail operations hub unifying Amazon, eBay, and Walmart storefronts with integrated distributor dropshipping and multi-carrier label generation.',
@@ -373,7 +373,7 @@ export const webProjects = [
       'Achieved 99.4% on-time carrier delivery compliance',
     ],
     stack: 'React.js, MongoDB, MERN Stack, Node.js',
-    shots: ['/shots/a5-1.png', '/shots/a5-2.png', '/shots/skusnap-3.png'],
+    shots: ['/shots/a5-1.webp', '/shots/a5-2.webp', '/shots/skusnap-3.webp'],
   },
   {
     slug: 'myship',
@@ -381,7 +381,7 @@ export const webProjects = [
     heading: 'MYSHIP',
     tag: 'Logistics',
     category: 'Web Application',
-    image: '/projects/myship.png',
+    image: '/projects/myship.webp',
     clientType: 'Cross-Border Freight & Parcel Delivery',
     description:
       'International package forwarding and logistics tracking platform featuring dimensional weight calculation, customs clearance automation, and carrier rate discounting.',
@@ -396,10 +396,10 @@ export const webProjects = [
     ],
     stack: 'React.js, MongoDB, Node.js, Express.js',
     shots: [
-      '/shots/myship-1.png',
-      '/shots/myship-2.png',
-      '/shots/myship-3.png',
-      '/shots/myship-4.png',
+      '/shots/myship-1.webp',
+      '/shots/myship-2.webp',
+      '/shots/myship-3.webp',
+      '/shots/myship-4.webp',
     ],
   },
   {
@@ -408,7 +408,7 @@ export const webProjects = [
     heading: 'AUTOMAAZ',
     tag: 'Amazon Tools',
     category: 'Web Application',
-    image: '/projects/automaz.png',
+    image: '/projects/automaz.webp',
     clientType: 'Amazon FBA / FBM Brand Aggregator',
     description:
       'Real-time Amazon store automation and order management software built on Amazon SP-API to optimize fulfillment workflows, inventory replenishment, and Buy Box retention.',
@@ -423,11 +423,11 @@ export const webProjects = [
     ],
     stack: 'React js, Firebase, Firestore',
     shots: [
-      '/shots/automaz-1.png',
-      '/shots/automaz-2.png',
-      '/shots/automaz-3.png',
-      '/shots/automaz-4.png',
-      '/shots/automaz-5.png',
+      '/shots/automaz-1.webp',
+      '/shots/automaz-2.webp',
+      '/shots/automaz-3.webp',
+      '/shots/automaz-4.webp',
+      '/shots/automaz-5.webp',
     ],
   },
 ]
@@ -439,7 +439,7 @@ export const mobileProjects = [
     heading: 'NOVO PLAZA',
     tag: 'Retail & Loyalty',
     category: 'Mobile Application',
-    image: '/projects/novoplaza.png',
+    image: '/projects/novoplaza.webp',
     clientType: 'Mobile Shopping Mall & Loyalty Platform',
     description:
       'Interactive retail loyalty mobile application rewarding in-mall shopping with prize draws, redeemable merchant reward points, and localized retail promotions.',
@@ -453,7 +453,7 @@ export const mobileProjects = [
       '4.8 star average rating on Google Play and Apple App Store',
     ],
     stack: 'React Native, Firebase, Cloud Functions',
-    shots: ['/shots/novoplaza-1.jpeg'],
+    shots: ['/shots/novoplaza-1.webp'],
   },
   {
     slug: 'taskii',
@@ -461,7 +461,7 @@ export const mobileProjects = [
     heading: 'TASKII',
     tag: 'Marketplace',
     category: 'Mobile Application',
-    image: '/projects/taskii.png',
+    image: '/projects/taskii.webp',
     clientType: 'On-Demand Local Services Marketplace',
     description:
       'Two-sided on-demand task marketplace connecting homeowners with verified local service contractors (electricians, plumbers, repair technicians) with milestone escrow billing.',
@@ -475,7 +475,7 @@ export const mobileProjects = [
       '96% customer satisfaction rating on completed jobs',
     ],
     stack: 'React/React Native, MongoDB, Google Firebase, GraphQL, Node.js',
-    shots: ['/shots/taskii-1.jpg'],
+    shots: ['/shots/taskii-1.webp'],
   },
   {
     slug: 'team-connection',
@@ -483,7 +483,7 @@ export const mobileProjects = [
     heading: 'TEAM CONNECTION',
     tag: 'Enterprise Workflow',
     category: 'Mobile Application',
-    image: '/projects/team-connection.png',
+    image: '/projects/team-connection.webp',
     clientType: 'Energy & Oil Refinery Enterprise',
     description:
       'Enterprise workforce coordination app engineered for industrial oil refinery facilities, providing shift broadcasting, hazardous task assignments, and compliance tracking.',
@@ -497,7 +497,7 @@ export const mobileProjects = [
       'Zero downtime or data loss during network disconnects',
     ],
     stack: 'Mobile: React Native, Firebase, Firestore | Web: React.js, Firebase, Firestore',
-    shots: ['/shots/team-connection-1.jpg'],
+    shots: ['/shots/team-connection-1.webp'],
   },
   {
     slug: 'snippy',
@@ -505,7 +505,7 @@ export const mobileProjects = [
     heading: 'SNIPPY',
     tag: 'Analytics SaaS',
     category: 'Web Application',
-    image: '/projects/snippy.png',
+    image: '/projects/snippy.webp',
     clientType: 'Marketing Analytics & Ad Tech SaaS',
     description:
       'High-throughput branded URL shortening and link intelligence platform designed for campaign attribution, deep linking, and real-time click stream analytics.',
@@ -519,7 +519,7 @@ export const mobileProjects = [
       'Full UTM tag builder and custom branded domain SSL support',
     ],
     stack: 'Node.js, Express, Redis, React.js, PostgreSQL, AWS',
-    shots: ['/projects/snippy-shot.png'],
+    shots: ['/projects/snippy-shot.webp'],
   },
 ]
 

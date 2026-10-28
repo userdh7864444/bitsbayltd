@@ -81,7 +81,7 @@ export const servicePages = {
   'android-app-development': {
     title: 'Android Apps Development',
     subtitle: 'We develop high-performing app solutions for Android based devices.',
-    heroImage: '/hero/android-app-development.jpg',
+    heroImage: '/hero/android-app-development.webp',
     sections: [
       {
         type: 'cards',
@@ -182,7 +182,7 @@ export const servicePages = {
   'ios-app-development': {
     title: 'IOS Apps Development',
     subtitle: 'Elevate Your Business with Premium iOS Applications Built Using Swift & Objective C.',
-    heroImage: '/hero/ios-app-development.jpg',
+    heroImage: '/hero/ios-app-development.webp',
     sections: [
       {
         type: 'intro',
@@ -316,7 +316,7 @@ export const servicePages = {
   'cross-platform-mobile-app-development': {
     title: 'Cross-Platform Mobile Apps',
     subtitle: 'Flawless hybrid app development for multiple platforms using HTML5, CSS3 and JavaScript.',
-    heroImage: '/hero/cross-platform-mobile-app-development.jpg',
+    heroImage: '/hero/cross-platform-mobile-app-development.webp',
     sections: [
       {
         type: 'intro',
@@ -441,7 +441,7 @@ export const servicePages = {
     title: 'Custom Web Apps',
     subtitle:
       'Secure custom web solutions tailored to meet your business requirements within your timeframe and budget.',
-    heroImage: '/hero/custom-web-app.jpg',
+    heroImage: '/hero/custom-web-app.webp',
     sections: [
       {
         type: 'cards',
@@ -543,7 +543,7 @@ export const servicePages = {
   'progressive-web-apps': {
     title: 'Progressive Web Apps',
     subtitle: 'Leverage the power of the latest technology with our development services for progressive web apps.',
-    heroImage: '/hero/progressive-web-apps.jpg',
+    heroImage: '/hero/progressive-web-apps.webp',
     sections: [
       {
         type: 'intro',
@@ -563,7 +563,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         heading: 'Reasons to choose us',
         subheading:
           "Our processes are streamlined to develop flawless progressive web applications. We achieve this by carrying out a series of multiple online and offline testing procedures, ensuring that the final release surpasses client expectations. Here's why we are different from others in the market:",
@@ -627,7 +627,7 @@ export const servicePages = {
   'front-end-development-services': {
     title: 'Frontend Development Services',
     subtitle: 'Reliable and adaptable web app solutions without jeopardizing your commercial objectives.',
-    heroImage: '/hero/front-end-development-services.jpg',
+    heroImage: '/hero/front-end-development-services.webp',
     sections: [
       {
         type: 'cards',
@@ -701,7 +701,7 @@ export const servicePages = {
   'saas-application-development': {
     title: 'SaaS Application Development',
     subtitle: 'Bitsbay delivers automated systems that can be fully incorporated into a SaaS network.',
-    heroImage: '/hero/saas-application-development.jpg',
+    heroImage: '/hero/saas-application-development.webp',
     sections: [
       {
         type: 'intro',
@@ -716,7 +716,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         subheading:
           'When it comes to SaaS Application Development Services, we can be your ideal partner. We go above and beyond to ensure client satisfaction.',
         items: [
@@ -828,7 +828,7 @@ export const servicePages = {
   'custom-application-development': {
     title: 'Custom Application Development',
     subtitle: 'Bitsbay produces powerful custom apps especially built to cater to your business necessities.',
-    heroImage: '/hero/custom-application-development.jpg',
+    heroImage: '/hero/custom-application-development.webp',
     sections: [
       {
         type: 'intro',
@@ -848,7 +848,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         subheading:
           "Our immaculate app development services and support have always guaranteed customer satisfaction. Here's a list of things that set us apart from others in the market.",
         items: [
@@ -912,7 +912,7 @@ export const servicePages = {
   'iot-development': {
     title: 'IoT Development',
     subtitle: 'Bitsbay implementation of IoT has helped businesses improve day-to-day operations, adding to their efficiency.',
-    heroImage: '/hero/iot-development.jpg',
+    heroImage: '/hero/iot-development.webp',
     sections: [
       {
         type: 'intro',
@@ -933,7 +933,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         subheading:
           "Our client-oriented services make us an ideal fit for your IoT technology implementation. Here's a list of why you should let us be your technology partner:",
         items: [
@@ -994,7 +994,7 @@ export const servicePages = {
   'chatbot-development': {
     title: 'Chatbot Development',
     subtitle: 'We can help you create a working chatbot for your business within your budget and timelines.',
-    heroImage: '/hero/chatbot-development.jpg',
+    heroImage: '/hero/chatbot-development.webp',
     sections: [
       {
         type: 'intro',
@@ -1014,7 +1014,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         subheading:
           'We not only provide development services, but ensure a great experience for our clients and aim to be your development partners. Our services include, but are not limited to:',
         items: [
@@ -1080,7 +1080,7 @@ export const servicePages = {
     title: 'Augmented Reality App Development',
     subtitle:
       'Bitsbay specializes in augmented reality app development allowing businesses, industries, and organizations to carry out life-like simulations of their basic operations without any issues.',
-    heroImage: '/hero/augmented-reality-app-development.jpg',
+    heroImage: '/hero/augmented-reality-app-development.webp',
     sections: [
       {
         type: 'intro',
@@ -1100,7 +1100,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         subheading:
           'Our outstanding end-to-end project delivery services are what set us apart and ensure client satisfaction.',
         items: [
@@ -1165,7 +1165,7 @@ export const servicePages = {
     title: 'Lean Product Development',
     subtitle:
       'We can help you create a working MVP for your app idea within your budget and timelines with expert guidance.',
-    heroImage: '/hero/learn-product-development.jpg',
+    heroImage: '/hero/learn-product-development.webp',
     sections: [
       {
         type: 'intro',
@@ -1185,7 +1185,7 @@ export const servicePages = {
       },
       {
         type: 'reasons',
-        image: '/hero/reasons.png',
+        image: '/hero/reasons.webp',
         heading: 'Reasons to choose us',
         subheading:
           'Our thorough understanding and keen ability gives us an edge over other agile development companies and empowers us to deliver results that guarantee tangible customer satisfaction. Our MVP development process includes:',
@@ -1255,7 +1255,7 @@ export const servicePages = {
   ---------------------------------------------------------------- */
   'app-development': {
     title: 'Apps Development',
-    heroImage: '/hero/app-development.jpg',
+    heroImage: '/hero/app-development.webp',
     cta: null,
     sections: [
       {
@@ -1335,7 +1335,7 @@ export const servicePages = {
 
   'web-applications': {
     title: 'Web Applications',
-    heroImage: '/hero/web-applications.jpg',
+    heroImage: '/hero/web-applications.webp',
     cta: null,
     sections: [
       {
@@ -1415,7 +1415,7 @@ export const servicePages = {
 
   'product-engineering': {
     title: 'Product Engineering',
-    heroImage: '/hero/product-engineering.jpg',
+    heroImage: '/hero/product-engineering.webp',
     cta: null,
     sections: [
       {
@@ -1447,7 +1447,7 @@ export const servicePages = {
 
   'trending-technologies': {
     title: 'Trending Technologies',
-    heroImage: '/hero/trending-technologies.jpg',
+    heroImage: '/hero/trending-technologies.webp',
     cta: null,
     sections: [
       {
@@ -1479,7 +1479,7 @@ export const servicePages = {
 
   amazon: {
     title: 'Amazon',
-    heroImage: '/hero/amazon.jpg',
+    heroImage: '/hero/amazon.webp',
     cta: null,
     sections: [
       {

@@ -61,13 +61,13 @@ export default function StaffAugmentation() {
         title={seo.title}
         description={seo.description}
         path="/services/staff-augmentation"
-        image="/hero/staff-augmentation.jpg"
+        image="/hero/staff-augmentation.webp"
         schema={schema}
       />
       <ServiceHero
         title="Staff Augmentation"
         subtitle="Enhance Your Team's Expertise with Trusted Professionals"
-        image="/hero/staff-augmentation.jpg"
+        image="/hero/staff-augmentation.webp"
         cta="Hire Top IT Talent"
       />
 
@@ -132,7 +132,7 @@ export default function StaffAugmentation() {
           <Reveal>
             <figure className="overflow-hidden border border-line bg-muted r-diag">
               <img
-                src="/staff/img-1.png"
+                src="/staff/img-1.webp"
                 alt="Bitsbay staff augmentation"
                 width={1600}
                 height={711}
@@ -181,7 +181,7 @@ export default function StaffAugmentation() {
           <Reveal delay={0.16} className="mt-14">
             <figure className="overflow-hidden border border-line bg-muted r-diag">
               <img
-                src="/staff/img-2.png"
+                src="/staff/img-2.webp"
                 alt="Bitsbay remote developers collaborating on software sprint"
                 width={1600}
                 height={711}

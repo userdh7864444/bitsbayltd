@@ -16,7 +16,7 @@ const content = {
   'amazon-services': {
     title: 'Amazon Services',
     subtitle: 'Sell more with our Full-Service Managment for Amazon Program',
-    heroImage: '/hero/amazon-services.jpg',
+    heroImage: '/hero/amazon-services.webp',
     intro: [
       'Our done-for-you management approach ensures your account on Amazon is not only running smoothly but your sales are also growing, too. Our team handles everything from paid advertising to organic marketing campaigns to operations management (including brand protection).',
     ],
@@ -26,7 +26,7 @@ const content = {
   'ad-services': {
     title: 'Ad Services',
     subtitle: 'Increase sales with data-driven advertising managment for Amazon',
-    heroImage: '/hero/ad-services.jpg',
+    heroImage: '/hero/ad-services.webp',
     intro: [
       'How many potential customers are you losing because your customers can’t find you when they’re ready to buy? How many weeks do you miss your sales goals? How much more effective could your ads be with the right data analysis and optimizations.',
     ],
@@ -49,7 +49,7 @@ const content = {
         'If you don’t know how to master advertising on Amazon, it can be difficult and frustrating. We believe your brand deserves to succeed on Amazon.',
         'Whether you’re a start-up or an 8-figure seller, on Vendor Central or Seller Central Management on Amazon, we know how to build and implement the right advertising strategy for you. Our team adjusts your ad campaigns daily so that you meet your revenue and ranking targets.',
       ],
-      image: '/amazon/target-sheet.jpg',
+      image: '/amazon/target-sheet.webp',
     },
   },
 }

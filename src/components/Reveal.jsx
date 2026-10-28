@@ -1,16 +1,13 @@
 import { useRef } from 'react'
 import { m, useReducedMotion, useInView } from 'framer-motion'
 
-// Reveal triggers as soon as any part of a block clears this much of the
-// viewport. Using a margin rather than an `amount` threshold matters for the
-// long service sections: a nine-card process grid can be several screens tall,
-// and a percentage threshold on an element that size is slow — or impossible —
-// to satisfy, which left whole sections sitting at opacity 0.
-const VIEWPORT = { once: true, amount: 'some', margin: '0px 0px -12% 0px' }
+// Reveal triggers 150px BEFORE an element enters the viewport so that images
+// and content are already fully rendered and visible when the visitor scrolls to them.
+const VIEWPORT = { once: true, amount: 'some', margin: '0px 0px 150px 0px' }
 
 /**
  * Scroll-triggered reveal. Wrap any block:
- *   <Reveal delay={0.1}><h2>…</h2></Reveal>
+ *   <Reveal delay={0.05}><h2>…</h2></Reveal>
  *
  * Visibility is driven by `useInView` rather than `whileInView` so the observer
  * belongs to this mount. `whileInView` keeps its in-view state on the layout
@@ -23,7 +20,7 @@ const VIEWPORT = { once: true, amount: 'some', margin: '0px 0px -12% 0px' }
 export default function Reveal({
   children,
   delay = 0,
-  y = 28,
+  y = 14,
   once = true,
   className = '',
   as = 'div',
@@ -45,7 +42,7 @@ export default function Reveal({
       className={className}
       initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.35, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </MotionTag>
@@ -53,7 +50,7 @@ export default function Reveal({
 }
 
 /** Stagger container — children use `childVariants` below. */
-export function Stagger({ children, className = '', stagger = 0.09, once = true, style }) {
+export function Stagger({ children, className = '', stagger = 0.04, once = true, style }) {
   const reduce = useReducedMotion()
   const ref = useRef(null)
   const inView = useInView(ref, { ...VIEWPORT, once })
@@ -83,11 +80,11 @@ export function Stagger({ children, className = '', stagger = 0.09, once = true,
 }
 
 export const childVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 14 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
   },
 }
 

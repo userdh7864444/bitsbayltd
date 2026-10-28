@@ -195,14 +195,14 @@ export default function ListingIntegrity() {
         title={seo.title}
         description={seo.description}
         path="/products/listing-integrity"
-        image="/listing/hero.jpg"
+        image="/listing/hero.webp"
         schema={schema}
       />
       {/* Hero */}
       <Banner
         title="Protect Your Amazon Listings Before Violations Hurt You"
         subtitle="AI-powered monitoring that detects hidden keyword injections, unauthorized listing changes, category manipulation, and compliance risks in real time — across 20+ global Amazon marketplaces."
-        image="/listing/hero.jpg"
+        image="/listing/hero.webp"
         uppercaseTitle={false}
       >
       </Banner>
@@ -268,7 +268,7 @@ export default function ListingIntegrity() {
 
           <Reveal delay={0.1} className="mt-10">
             <img
-              src="/listing/violations.png"
+              src="/listing/violations.webp"
               alt="Amazon listing violation dashboard"
               width={1448}
               height={1086}
@@ -302,7 +302,7 @@ export default function ListingIntegrity() {
                 controls
                 playsInline
                 preload="metadata"
-                poster="/listing/violations.png"
+                poster="/listing/violations.webp"
                 className="aspect-video w-full"
               >
                 <source src="/listing/walkthrough.mp4" type="video/mp4" />

@@ -11,17 +11,11 @@ import { hero } from '../data/site'
 export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[660px] lg:min-h-[780px]">
-      <div aria-hidden className="absolute inset-0 -z-10">
-        <picture className="absolute inset-0 block h-full w-full">
-          <source media="(max-width: 768px)" srcSet="/banners/hero-bg-mobile.webp" type="image/webp" />
-          <img
-            src="/banners/hero-bg.webp"
-            alt=""
-            decoding="async"
-            fetchpriority="high"
-            className="h-full w-full object-cover object-center"
-          />
-        </picture>
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <div
+          className="hero-bg-responsive h-full w-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/banners/hero-bg.webp')" }}
+        />
         <div className="absolute inset-0 bg-overlay/72" />
       </div>
 
@@ -58,9 +52,9 @@ export default function Hero() {
         </div>
 
         <m.div
-          initial={{ opacity: 0, scale: 0.92 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.25, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
           className="flex justify-center mt-6 lg:mt-0"
         >
           <img
@@ -70,6 +64,8 @@ export default function Hero() {
             alt="Bitsbay - Custom Software & Amazon Growth Agency"
             width={420}
             height={426}
+            loading="eager"
+            decoding="async"
             fetchpriority="high"
             className="w-full max-w-[240px] sm:max-w-[300px] lg:max-w-[420px] aspect-[420/426] h-auto object-contain"
           />
