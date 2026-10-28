@@ -18,7 +18,7 @@ export default function SectionHead({
   return (
     <div className={className}>
       <Reveal>
-        {eyebrow && <h5 className="eyebrow">{eyebrow}</h5>}
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         {heading && <h2 className={eyebrow ? 'mt-3' : ''}>{heading}</h2>}
         {subheading && <p className="mt-4 leading-relaxed">{subheading}</p>}
       </Reveal>

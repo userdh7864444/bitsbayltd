@@ -10,12 +10,29 @@
     <link rel="preload" as="image" href="/banners/hero-bg-mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
     <link rel="preload" as="image" href="/banners/hero-bg.webp" media="(min-width: 769px)" fetchpriority="high" />
     <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B1TSBAY001"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-B1TSBAY001');
+      // gtag.js (~150 KB, Google Tag Manager) is fetched only after the first
+      // interaction or 4 seconds, so it doesn't compete with the first render.
+      // Events queued above are sent once the library loads.
+      (function () {
+        var loaded = false;
+        function loadGtag() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-B1TSBAY001';
+          document.head.appendChild(s);
+        }
+        ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (type) {
+          window.addEventListener(type, loadGtag, { once: true, passive: true });
+        });
+        setTimeout(loadGtag, 4000);
+      })();
     </script>
     <!-- Search Engine Verification Tags (optional if using DNS verification) -->
     <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_TOKEN_HERE" /> -->
@@ -52,6 +69,7 @@
       "areaServed": ["US", "GB", "PK"],
       "sameAs": [
         "https://www.linkedin.com/company/bitsbayltd",
+        "https://x.com/Bitsbayltd",
         "https://www.facebook.com/bitsbayltd",
         "https://www.youtube.com/@bitsbayltd",
         "https://www.upwork.com/agencies/bitsbay/"

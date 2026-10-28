@@ -1,6 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, matchRoutes } from 'react-router-dom'
 import { AnimatePresence, MotionConfig } from 'framer-motion'
-import { useEffect } from 'react'
+import { lazy, useEffect, useReducer } from 'react'
 import Lenis from 'lenis'
 
 import Navbar from './components/Navbar'
@@ -8,22 +8,85 @@ import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import ScrollToTop from './components/ScrollToTop'
 import { setLenis } from './lib/scroll'
-
 import Home from './pages/Home'
-import Projects from './pages/Projects'
-import ProjectDetail from './pages/ProjectDetail'
-import AboutPage from './pages/AboutPage'
-import ServicesPage from './pages/ServicesPage'
-import ServiceDetail from './pages/ServiceDetail'
-import AmazonGrowth from './pages/AmazonGrowth'
-import StaffAugmentation from './pages/StaffAugmentation'
-import ListingIntegrity from './pages/ListingIntegrity'
-import Technologies from './pages/Technologies'
-import Contact from './pages/Contact'
-import Blog from './pages/Blog'
-import BlogPost from './pages/BlogPost'
-import PrivacyPolicy from './pages/PrivacyPolicy'
-import NotFound from './pages/NotFound'
+
+/**
+ * Wraps a page so it is code-split into its own chunk. The chunk is fetched
+ * on demand, and `preload` lets main.jsx load it before hydrating a
+ * prerendered page. Once loaded, the page renders synchronously, so it
+ * matches the prerendered markup and needs no Suspense boundary.
+ */
+function lazyPage(load) {
+  let Component = null
+  let pending = null
+
+  const preload = () => {
+    pending ??= load().then((module) => {
+      Component = module.default
+    })
+    return pending
+  }
+
+  function LazyPage(props) {
+    const [, rerender] = useReducer((count) => count + 1, 0)
+
+    useEffect(() => {
+      if (!Component) preload().then(rerender)
+    }, [])
+
+    return Component ? <Component {...props} /> : null
+  }
+  LazyPage.preload = preload
+
+  return LazyPage
+}
+
+// The home page is the landing route, so it stays in the entry chunk. Every
+// other page is split out so visitors only download the code for the page
+// they open, which keeps the initial JavaScript (and main-thread work) small.
+const Projects = lazyPage(() => import('./pages/Projects'))
+const ProjectDetail = lazyPage(() => import('./pages/ProjectDetail'))
+const AboutPage = lazyPage(() => import('./pages/AboutPage'))
+const ServicesPage = lazyPage(() => import('./pages/ServicesPage'))
+const ServiceDetail = lazyPage(() => import('./pages/ServiceDetail'))
+const AmazonGrowth = lazyPage(() => import('./pages/AmazonGrowth'))
+const StaffAugmentation = lazyPage(() => import('./pages/StaffAugmentation'))
+const ListingIntegrity = lazyPage(() => import('./pages/ListingIntegrity'))
+const Technologies = lazyPage(() => import('./pages/Technologies'))
+const Contact = lazyPage(() => import('./pages/Contact'))
+const Blog = lazyPage(() => import('./pages/Blog'))
+const BlogPost = lazyPage(() => import('./pages/BlogPost'))
+const PrivacyPolicy = lazyPage(() => import('./pages/PrivacyPolicy'))
+const NotFound = lazyPage(() => import('./pages/NotFound'))
+
+// Single source of truth for the routes, used both to render <Routes> and to
+// find which page chunk a URL needs before it is hydrated.
+const routes = [
+  { path: '/', Page: Home },
+  { path: '/projects', Page: Projects },
+  { path: '/projects/:slug', Page: ProjectDetail },
+  { path: '/about', Page: AboutPage },
+  { path: '/services', Page: ServicesPage },
+  { path: '/services/amazon-services', Page: AmazonGrowth },
+  { path: '/services/ad-services', Page: AmazonGrowth },
+  { path: '/services/staff-augmentation', Page: StaffAugmentation },
+  { path: '/services/:slug', Page: ServiceDetail },
+  // { path: '/products', Page: ListingIntegrity },
+  { path: '/products/listing-integrity', Page: ListingIntegrity },
+  { path: '/products/:slug', Page: ListingIntegrity },
+  { path: '/technologies', Page: Technologies },
+  { path: '/blog', Page: Blog },
+  { path: '/blog/:slug', Page: BlogPost },
+  { path: '/privacy-policy', Page: PrivacyPolicy },
+  { path: '/contact', Page: Contact },
+  { path: '*', Page: NotFound },
+]
+
+/** Loads the page chunk for a URL. Resolves once it is ready to render. */
+export function preloadRoute(pathname) {
+  const match = matchRoutes(routes, pathname)?.[0]
+  return match?.route.Page.preload?.() ?? Promise.resolve()
+}
 
 export default function App() {
   // Smooth inertial scrolling — skipped when the user prefers reduced motion.
@@ -59,24 +122,9 @@ export default function App() {
       <main>
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:slug" element={<ProjectDetail />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/amazon-services" element={<AmazonGrowth />} />
-            <Route path="/services/ad-services" element={<AmazonGrowth />} />
-            <Route path="/services/staff-augmentation" element={<StaffAugmentation />} />
-            <Route path="/services/:slug" element={<ServiceDetail />} />
-            {/* <Route path="/products" element={<ListingIntegrity />} /> */}
-            <Route path="/products/listing-integrity" element={<ListingIntegrity />} />
-            <Route path="/products/:slug" element={<ListingIntegrity />} />
-            <Route path="/technologies" element={<Technologies />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
+            {routes.map(({ path, Page }) => (
+              <Route key={path} path={path} element={<Page />} />
+            ))}
           </Routes>
         </AnimatePresence>
       </main>

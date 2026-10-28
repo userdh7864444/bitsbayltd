@@ -76,19 +76,17 @@ export default function PrivacyPolicy() {
             <h2>{p.contact.heading}</h2>
             <p className="mt-3">{p.contact.company}</p>
             <p className="mt-1">
-              Email:{' '}
-              <ObfuscatedEmail
+              Email: <ObfuscatedEmail
                 email={p.contact.email}
                 label="Email Bitsbay support"
                 className="text-brand transition-colors hover:underline"
               />
             </p>
             <p className="mt-1">
-              Website:{' '}
-              <a
+              Website: <a
                 href={p.contact.website}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="text-brand transition-colors hover:underline"
               >
                 {p.contact.website}

@@ -24,9 +24,9 @@ export default function SuccessStories({
     <div className="grid items-center gap-6 bg-brand px-6 py-8 text-white r-diag-lg sm:px-10 sm:py-10 lg:grid-cols-[70fr_30fr] lg:px-[50px]">
       <Reveal>
         {eyebrow && (
-          <h5 className="eyebrow mb-4 !text-white">
+          <p className="eyebrow mb-4 !text-white">
             {eyebrow}
-          </h5>
+          </p>
         )}
 
         <h2 className="!text-white">

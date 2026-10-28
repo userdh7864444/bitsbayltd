@@ -20,7 +20,7 @@ export default function AppointmentSection() {
 
       <div className="container-x">
         <Reveal className="max-w-3xl">
-          <h5 className="eyebrow">{cta.eyebrow}</h5>
+          <p className="eyebrow">{cta.eyebrow}</p>
           <h2 className="mt-4 text-white">{cta.title}</h2>
           <p className="mt-4 text-white/80">
             Bitsbay is always ready to discuss new ideas ranging from Mobile App Development

@@ -89,6 +89,7 @@ export default function CardsGrid({ section }) {
                       }`}
                     >
                       {linkLabel}
+                      {entry.title && <span className="sr-only">{` about ${entry.title}`}</span>}
                     </Link>
                   )}
                 </motion.div>

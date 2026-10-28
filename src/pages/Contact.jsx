@@ -387,9 +387,9 @@ export default function Contact() {
 
           {/* RIGHT SIDE */}
           <Reveal delay={0.12}>
-            <h5 className="eyebrow">
+            <p className="eyebrow">
               {contactIntro.eyebrow}
-            </h5>
+            </p>
 
             <h2 className="mt-4">
               {contactIntro.title}
@@ -466,7 +466,7 @@ export default function Contact() {
                     key={s.label}
                     href={s.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={s.label}
                     className="grid h-11 w-11 place-items-center border border-line text-ink transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:bg-brand hover:text-white"
                     style={{
@@ -502,7 +502,7 @@ function Field({
         htmlFor={id}
         className="block text-sm font-semibold text-ink"
       >
-        {label}{' '}
+        {`${label} `}
         {required && (
           <span className="text-brand">*</span>
         )}

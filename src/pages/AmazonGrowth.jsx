@@ -108,7 +108,7 @@ export default function AmazonGrowth() {
 
           {page.pitch && (
             <Reveal delay={0.08}>
-              <h5 className="eyebrow mt-8">{page.pitch.heading}</h5>
+              <p className="eyebrow mt-8">{page.pitch.heading}</p>
               {page.pitch.paragraphs.map((t) => (
                 <p key={t} className="mt-3 leading-relaxed">
                   {t}

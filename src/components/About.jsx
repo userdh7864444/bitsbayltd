@@ -44,7 +44,7 @@ export default function About({ showQuote = true }) {
 
         <div>
           <Reveal>
-            <h5 className="eyebrow">{about.eyebrow}</h5>
+            <p className="eyebrow">{about.eyebrow}</p>
             <h2 className="mt-4 text-ink">
               <strong>{about.title}</strong>
             </h2>
@@ -58,8 +58,7 @@ export default function About({ showQuote = true }) {
             <p className="mt-3">
               We at <strong className="text-ink">Bitsbay</strong> are focused in developing
               apps that let our clients stand out in front of their competitors. Our team
-              started providing custom-built technology services in{' '}
-              <strong className="text-ink">2019</strong> with a vision of building robust,
+              started providing custom-built technology services in <strong className="text-ink">2019</strong> with a vision of building robust,
               innovative and trendsetting solutions.
             </p>
           </Reveal>

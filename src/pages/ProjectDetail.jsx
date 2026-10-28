@@ -69,7 +69,7 @@ export default function ProjectDetail() {
                 </span>
                 {project.clientType && (
                   <span className="inline-block rounded-full border border-line bg-white px-3.5 py-1 text-xs font-semibold text-ink">
-                    Client: {project.clientType}
+                    {`Client: ${project.clientType}`}
                   </span>
                 )}
               </div>

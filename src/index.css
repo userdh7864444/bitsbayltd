@@ -16,12 +16,15 @@
 @theme {
   --color-ink: #181d23;
   --color-ink-soft: #2d3137;
-  --color-brand: #ff0000;
+  /* #e00000 keeps white text on red and red text on white above WCAG AA 4.5:1
+     (the original #ff0000 measured about 4:1). */
+  --color-brand: #e00000;
   --color-brand-dark: #000000;
-  --color-accent: #ff0000;
+  --color-accent: #e00000;
   --color-muted: #f7f7f7;
   --color-line: #cccccc;
-  --color-body: #717c90;
+  /* Body grey darkened from #717c90 so small copy passes 4.5:1 on white and #f7f7f7. */
+  --color-body: #5b6478;
   --color-overlay: #0f0e0e;
 
   /* Live site: headings render in Helvetica, body copy in Heebo. */

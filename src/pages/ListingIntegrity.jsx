@@ -338,7 +338,7 @@ export default function ListingIntegrity() {
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand/10 text-brand">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <p className="mt-4 text-xs font-semibold text-brand">Step {i + 1}</p>
+                  <p className="mt-4 text-xs font-semibold text-brand">{`Step ${i + 1}`}</p>
                   <h3 className="mt-1 font-display text-base font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-body">{s.body}</p>
                 </motion.div>

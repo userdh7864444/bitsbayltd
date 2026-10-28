@@ -15,6 +15,7 @@ export default function Pillars() {
   return (
     <section className="relative z-10 -mt-24 sm:-mt-28 lg:-mt-[110px]">
       <div className="container-x">
+        <h2 className="sr-only">Why choose Bitsbay</h2>
         <Stagger className="grid items-stretch overflow-hidden r-diag shadow-[0_24px_60px_-40px_rgba(0,0,0,0.45)] sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => {
             const Icon = getIcon(p.icon)
@@ -48,7 +49,7 @@ export default function Pillars() {
             className="flex flex-col justify-center bg-brand px-7 py-9 text-white sm:px-8 sm:py-10"
           >
             <h3 className="text-[22px] font-semibold text-white">{appointment.title}</h3>
-            <p className="mt-2.5 text-white/90">{appointment.body}</p>
+            <p className="mt-2.5 text-white">{appointment.body}</p>
             <Link to={appointment.cta.to} className="btn-white mt-6 w-fit">
               {appointment.cta.label}
               <ArrowRight className="h-3.5 w-3.5" />

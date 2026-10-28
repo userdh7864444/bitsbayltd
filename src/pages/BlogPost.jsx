@@ -73,17 +73,17 @@ export default function BlogPost() {
           <div className="mb-6 flex flex-wrap items-center gap-4 text-xs font-semibold text-body sm:text-sm">
             <span className="flex items-center gap-1.5 text-ink">
               <Calendar className="h-4 w-4 text-brand" />
-              Published: {post.date}
+              {`Published: ${post.date}`}
             </span>
             {post.updatedDate && (
               <span className="flex items-center gap-1.5 text-brand">
                 <Clock className="h-4 w-4" />
-                Updated: {post.updatedDate}
+                {`Updated: ${post.updatedDate}`}
               </span>
             )}
             <span className="flex items-center gap-1.5 text-ink">
               <UserCheck className="h-4 w-4 text-brand" />
-              By {author.name}
+              {`By ${author.name}`}
             </span>
           </div>
 
@@ -93,7 +93,7 @@ export default function BlogPost() {
               alt={post.title}
               width={1200}
               height={675}
-              fetchPriority="high"
+              fetchpriority="high"
               decoding="async"
               sizes="(max-width: 1024px) 100vw, 800px"
               className="w-full h-auto aspect-[16/9] object-cover"

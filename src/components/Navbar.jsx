@@ -164,11 +164,11 @@ export default function Navbar() {
             <a
               href={brand.upwork}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn-pill"
             >
               <UserRound className="h-3.5 w-3.5" />
-              hire
+              Hire Us
             </a>
           </div>
 
@@ -326,10 +326,10 @@ export default function Navbar() {
                 <a
                   href={brand.upwork}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="btn-outline mt-3 w-full justify-center"
                 >
-                  hire
+                  Hire Us
                 </a>
               </div>
             </motion.aside>

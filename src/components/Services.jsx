@@ -15,7 +15,7 @@ export default function Services() {
     <section id="services" className="bg-[#0000001c] py-16 sm:py-20 lg:py-[100px]">
       <div className="container-x">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h5 className="eyebrow">{servicesIntro.eyebrow}</h5>
+          <p className="eyebrow">{servicesIntro.eyebrow}</p>
           <h2 className="mt-4">{servicesIntro.title}</h2>
           <p className="mt-4">{servicesIntro.body}</p>
         </Reveal>
@@ -70,6 +70,7 @@ export default function Services() {
                   }`}
                 >
                   Read More
+                  <span className="sr-only">{` about ${s.title}`}</span>
                 </Link>
               </motion.article>
             )

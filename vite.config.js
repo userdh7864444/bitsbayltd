@@ -74,6 +74,10 @@ export default defineConfig({
       rendererOptions: {
         renderAfterDocumentEvent: 'app-rendered',
         maxConcurrentRoutes: 1,
+        // Prerender at a desktop width so responsive state that is set after
+        // mount (e.g. the testimonials carousel's cards per view) matches the
+        // first client render, which lets the prerendered markup hydrate cleanly.
+        viewport: { width: 1280, height: 900 },
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu'],
         skipThirdPartyRequests: true,

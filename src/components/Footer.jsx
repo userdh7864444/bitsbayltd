@@ -46,7 +46,7 @@ export default function Footer() {
                     key={s.label}
                     href={s.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={s.label}
                     className="grid h-9 w-9 place-items-center bg-brand text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-brand"
                     style={{ borderRadius: '10px 0 10px 0' }}
@@ -91,7 +91,7 @@ export default function Footer() {
                       <MapPin className="h-4 w-4" />
                     </FooterIcon>
                     <div>
-                      <h5 className="text-brand">{o.footerLabel}</h5>
+                      <p className="text-brand">{o.footerLabel}</p>
                       <p className="mt-1 leading-relaxed">{o.footerAddress}</p>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ export default function Footer() {
                       <Phone className="h-4 w-4" />
                     </FooterIcon>
                     <div>
-                      <h5 className="text-brand">{o.phoneLabel}</h5>
+                      <p className="text-brand">{o.phoneLabel}</p>
                       <a
                         href={`tel:${o.phone.replace(/[^+\d]/g, '')}`}
                         className="mt-1 inline-block transition-colors hover:text-brand"

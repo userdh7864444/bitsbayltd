@@ -48,16 +48,19 @@ export default function Testimonials() {
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-[100px]">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/banners/testimonials.webp')" }}
+        <img
+          src="/banners/testimonials.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-overlay/92" />
       </div>
 
       <div className="container-x">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h5 className="eyebrow">{testimonialsIntro.eyebrow}</h5>
+          <p className="eyebrow">{testimonialsIntro.eyebrow}</p>
           <h2 className="mt-4 text-white">{testimonialsIntro.title}</h2>
           <p className="mt-4 font-bold text-white/80">{testimonialsIntro.body}</p>
         </Reveal>
@@ -107,6 +110,7 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => go(i)}
                 aria-label={`Go to testimonial ${i + 1}`}
+                aria-current={i === index ? 'true' : undefined}
                 className={`h-2.5 w-2.5 rounded-full transition-colors ${
                   i === index ? 'bg-brand' : 'bg-white/35 hover:bg-white/60'
                 }`}

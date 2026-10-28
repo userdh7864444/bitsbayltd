@@ -5,7 +5,7 @@
 export const brand = {
   name: 'Bitsbay',
   logo: '/logo.png',
-  logoIcon: '/logo-icon.png',
+  logoIcon: '/logo-icon-150.png',
   heroLogo: '/hero-logo.png',
   upwork:
     'https://www.upwork.com/agencies/bitsbay/?companyReference=1329413591024889856',
@@ -113,7 +113,7 @@ export const pillars = [
 export const appointment = {
   title: 'Make Appointment',
   body: 'Book your appointment easily anytime online and connect with our team at your convenience.',
-  cta: { label: 'cONTACT US', to: '/contact' },
+  cta: { label: 'Contact Us', to: '/contact' },
 }
 
 export const mission =
@@ -153,7 +153,7 @@ export const services = [
   {
     icon: 'Globe',
     title: 'Web Applications',
-    body: 'We build fast, responsive web apps using modern framworks, focusing on design, fast performance, and with great user experience.',
+    body: 'We build fast, responsive web apps using modern frameworks, focusing on design, fast performance, and with great user experience.',
     to: '/services/web-applications',
   },
   {
@@ -184,7 +184,7 @@ export const successIntro = {
 
 export const legacy = {
   title: 'Our Legacy',
-  body: 'Bitsbay is a team of highly proficient app developers, passionate UX/UI designers and creative digital product developers. Who are habitual of exceeding client’s expectations. Our team has a legacy of delivering apps and digital solutions for small & medium enterprises in retail, manufacturing, healthcare, ecommerce and other sectors. Our approach to software development is unique, we go beyond and above by continuous improvement, anticipating challenges and fast paced problem resolution. Our biggest strength is in the collaborative nature of our services; We partner with the clients and build relationships to understand their business needs and goals. We optimize as deliver much as we can to a product that is as close to perfection as possible.',
+  body: 'Bitsbay is a team of highly proficient app developers, passionate UX/UI designers, and creative digital product engineers with a track record of exceeding client expectations. Our team has a legacy of delivering apps and digital solutions for small and medium enterprises across retail, manufacturing, healthcare, e-commerce, and other sectors. Our collaborative approach drives continuous improvement, anticipating challenges and delivering fast-paced problem resolution. We partner closely with clients to understand their business goals and deliver products engineered for long-term impact.',
 }
 
 export const legacyTiles = [
@@ -196,7 +196,7 @@ export const legacyTiles = [
 
 export const industriesIntro = {
   title: 'Multivertical Expertise',
-  body: 'We have catered every industry and discovered working for every niche. This is why, our legacy speaks louder than words .',
+  body: 'We have served diverse industries and delivered solutions across multiple niches. Our track record and client success speak for themselves.',
 }
 
 export const industries = [
@@ -221,12 +221,12 @@ export const testimonials = [
   {
     name: 'Simpson',
     role: 'Client',
-    body: 'Had hired him for a mobile application project that was previously delayed due to unforseen circumstances. He helped to the best of his abilities to build the project',
+    body: 'Hired Bitsbay for a mobile application project that was previously delayed due to unforeseen circumstances. Their team stepped in and delivered the project smoothly and efficiently.',
   },
   {
     name: 'Edward',
     role: 'Client',
-    body: 'They are cooperated a lot in the project, even if there is something needs to be changed at any time. There agency, Bitsbay is really knowledgeable and made me lots of money',
+    body: 'They cooperated exceptionally well throughout the project, accommodating changes seamlessly at every stage. Their agency, Bitsbay, is deeply knowledgeable and delivered outstanding business results.',
   },
 ]
 

@@ -61,7 +61,7 @@ export default function Hero() {
             alt="Bitsbay - Custom Software & Amazon Growth Agency"
             width={420}
             height={426}
-            fetchPriority="high"
+            fetchpriority="high"
             className="w-full max-w-[240px] sm:max-w-[300px] lg:max-w-[420px] aspect-[420/426] h-auto object-contain"
           />
         </motion.div>

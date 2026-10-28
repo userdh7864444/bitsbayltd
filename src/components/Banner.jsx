@@ -41,14 +41,14 @@ export default function Banner({
         className={`container-x w-full py-24 lg:py-28 ${centered ? 'text-center' : ''}`}
       >
         {eyebrow && (
-          <motion.h5
+          <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-4 text-brand"
           >
             {eyebrow}
-          </motion.h5>
+          </motion.p>
         )}
 
         <motion.h1
