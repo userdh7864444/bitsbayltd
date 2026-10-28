@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Reveal, { Stagger, childVariants } from '../Reveal'
 import SectionHead from './SectionHead'
 
@@ -43,7 +43,7 @@ export default function ReasonsList({ section }) {
           {entries.length > 0 && (
             <Stagger className={`grid gap-4 ${split ? '' : 'mx-auto max-w-3xl sm:grid-cols-2'}`}>
               {entries.map((entry, i) => (
-                <motion.div
+                <m.div
                   key={`${entry.title || entry.body}-${i}`}
                   variants={childVariants}
                   className="flex items-start gap-3 border border-line bg-white px-5 py-4 r-diag-sm"
@@ -57,7 +57,7 @@ export default function ReasonsList({ section }) {
                       </span>
                     )}
                   </span>
-                </motion.div>
+                </m.div>
               ))}
             </Stagger>
           )}

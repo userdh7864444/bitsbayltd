@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import {
   AlertCircle,
   CheckCircle2,
@@ -322,7 +322,7 @@ export default function Contact() {
               </div>
 
               {/* SUBMIT BUTTON */}
-              <motion.button
+              <m.button
                 type="submit"
                 whileTap={{ scale: 0.98 }}
                 disabled={status === 'sending'}
@@ -331,7 +331,7 @@ export default function Contact() {
                 {status === 'sending'
                   ? 'Sending…'
                   : 'Submit'}
-              </motion.button>
+              </m.button>
 
               {/* STATUS */}
               <div

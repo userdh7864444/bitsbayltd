@@ -1,5 +1,5 @@
 import { useLocation, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SEO from '../components/SEO'
 import ServiceHero from '../components/service/ServiceHero'
 import Reveal, { Stagger, childVariants } from '../components/Reveal'
@@ -245,7 +245,7 @@ export default function AmazonGrowth() {
 
           <Stagger className="mx-auto mt-9 grid max-w-xl gap-4 text-left">
             {plan.map((step, i) => (
-              <motion.div
+              <m.div
                 key={step}
                 variants={childVariants}
                 className="flex items-center gap-4 border border-line bg-white px-5 py-4 r-diag-sm"
@@ -254,7 +254,7 @@ export default function AmazonGrowth() {
                   {i + 1}
                 </span>
                 <h4 className="text-ink">{step}</h4>
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
 

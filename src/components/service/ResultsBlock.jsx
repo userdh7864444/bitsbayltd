@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, TrendingUp } from 'lucide-react'
 import Reveal, { Stagger, childVariants } from '../Reveal'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SectionHead from './SectionHead'
 
 /**
@@ -27,7 +27,7 @@ export default function ResultsBlock({ section }) {
         {entries.length > 0 && (
           <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {entries.map((e, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 variants={childVariants}
                 className="flex flex-col gap-3 border border-line bg-white p-8 r-diag"
@@ -36,7 +36,7 @@ export default function ResultsBlock({ section }) {
                 <p className="text-4xl font-bold text-ink">{e.stat}</p>
                 <p className="font-semibold text-ink">{e.label}</p>
                 {e.detail && <p className="text-sm leading-relaxed">{e.detail}</p>}
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         )}

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { getIcon } from '../../lib/icons'
 import { gridColumns } from '../../lib/serviceSections'
@@ -42,7 +42,7 @@ export default function CardsGrid({ section }) {
               const Icon = getIcon(entry.icon)
               const filled = featuredFirst && i === 0
               return (
-                <motion.div
+                <m.div
                   key={`${entry.title || 'card'}-${i}`}
                   variants={childVariants}
                   className={`group relative flex flex-col overflow-hidden p-8 transition-colors duration-300 r-diag ${
@@ -92,7 +92,7 @@ export default function CardsGrid({ section }) {
                       {entry.title && <span className="sr-only">{` about ${entry.title}`}</span>}
                     </Link>
                   )}
-                </motion.div>
+                </m.div>
               )
             })}
           </Stagger>

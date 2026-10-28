@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import {
   ChevronDown,
   ChevronRight,
@@ -46,7 +46,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
+      <m.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -95,7 +95,7 @@ export default function Navbar() {
 
                 <AnimatePresence>
                   {item.children && openGroup === item.label && (
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 6 }}
@@ -124,7 +124,7 @@ export default function Navbar() {
 
                             <AnimatePresence>
                               {child.children && openSub === child.label && (
-                                <motion.ul
+                                <m.ul
                                   initial={{ opacity: 0, x: -8 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   exit={{ opacity: 0, x: -6 }}
@@ -143,13 +143,13 @@ export default function Navbar() {
                                       </Link>
                                     </li>
                                   ))}
-                                </motion.ul>
+                                </m.ul>
                               )}
                             </AnimatePresence>
                           </li>
                         ))}
                       </ul>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </li>
@@ -181,20 +181,20 @@ export default function Navbar() {
             <Menu className="h-4 w-4" />
           </button>
         </nav>
-      </motion.header>
+      </m.header>
 
       {/* Mobile drawer — slides in from the left, light panel */}
       <AnimatePresence>
         {open && (
           <>
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
               className="fixed inset-0 z-[60] bg-black/20 xl:hidden"
             />
-            <motion.aside
+            <m.aside
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
@@ -246,7 +246,7 @@ export default function Navbar() {
 
                     <AnimatePresence initial={false}>
                       {item.children && openGroup === item.label && (
-                        <motion.div
+                        <m.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
@@ -289,7 +289,7 @@ export default function Navbar() {
                                 <AnimatePresence initial={false}>
                                   {child.children &&
                                     openSub === child.label && (
-                                      <motion.div
+                                      <m.div
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
@@ -305,13 +305,13 @@ export default function Navbar() {
                                             {leaf.label}
                                           </Link>
                                         ))}
-                                      </motion.div>
+                                      </m.div>
                                     )}
                                 </AnimatePresence>
                               </div>
                             ))}
                           </div>
-                        </motion.div>
+                        </m.div>
                       )}
                     </AnimatePresence>
                   </div>
@@ -332,7 +332,7 @@ export default function Navbar() {
                   Hire Us
                 </a>
               </div>
-            </motion.aside>
+            </m.aside>
           </>
         )}
       </AnimatePresence>

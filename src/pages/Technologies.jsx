@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
 import Reveal, { Stagger, childVariants } from '../components/Reveal'
@@ -46,7 +46,7 @@ export default function Technologies() {
                     const entry = techIcons[t]
                     const logo = techLogos[t]
                     return (
-                      <motion.div
+                      <m.div
                         key={`${group}-${t}`}
                         variants={childVariants}
                         whileHover={{ y: -6 }}
@@ -74,7 +74,7 @@ export default function Technologies() {
                           <span className="h-20 w-20" />
                         )}
                         <h4 className="text-[#575a5f]">{t}</h4>
-                      </motion.div>
+                      </m.div>
                     )
                   })}
                 </Stagger>

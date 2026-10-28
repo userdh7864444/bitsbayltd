@@ -1,7 +1,6 @@
-import { Routes, Route, matchRoutes } from 'react-router-dom'
-import { AnimatePresence, MotionConfig } from 'framer-motion'
+import { Routes, Route } from 'react-router-dom'
+import { AnimatePresence, LazyMotion, MotionConfig, domAnimation } from 'framer-motion'
 import { lazy, useEffect, useReducer } from 'react'
-import Lenis from 'lenis'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -11,32 +10,22 @@ import { setLenis } from './lib/scroll'
 import Home from './pages/Home'
 
 /**
- * Wraps a page so it is code-split into its own chunk. The chunk is fetched
- * on demand, and `preload` lets main.jsx load it before hydrating a
- * prerendered page. Once loaded, the page renders synchronously, so it
- * matches the prerendered markup and needs no Suspense boundary.
+ * Wraps a page so it is code-split into its own chunk. The page renders once
+ * its chunk has loaded. Rendering is done without a Suspense boundary, so
+ * the route tree stays simple.
  */
 function lazyPage(load) {
   let Component = null
-  let pending = null
-
-  const preload = () => {
-    pending ??= load().then((module) => {
-      Component = module.default
-    })
-    return pending
-  }
 
   function LazyPage(props) {
     const [, rerender] = useReducer((count) => count + 1, 0)
 
     useEffect(() => {
-      if (!Component) preload().then(rerender)
+      if (!Component) load().then((module) => { Component = module.default; rerender() })
     }, [])
 
     return Component ? <Component {...props} /> : null
   }
-  LazyPage.preload = preload
 
   return LazyPage
 }
@@ -82,12 +71,6 @@ const routes = [
   { path: '*', Page: NotFound },
 ]
 
-/** Loads the page chunk for a URL. Resolves once it is ready to render. */
-export function preloadRoute(pathname) {
-  const match = matchRoutes(routes, pathname)?.[0]
-  return match?.route.Page.preload?.() ?? Promise.resolve()
-}
-
 export default function App() {
   // Smooth inertial scrolling — skipped when the user prefers reduced motion.
   useEffect(() => {
@@ -95,25 +78,34 @@ export default function App() {
     const isTouchOrMobile = window.matchMedia('(max-width: 768px)').matches || ('ontouchstart' in window) || navigator.maxTouchPoints > 0
     if (prefersReduced || isTouchOrMobile) return
 
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true })
-    setLenis(lenis)
+    // Lenis is only needed on desktop, so it is loaded on demand and stays
+    // out of the mobile bundle.
+    let lenis = null
     let frame
-    const raf = (time) => {
-      lenis.raf(time)
+    let cancelled = false
+    import('lenis').then(({ default: Lenis }) => {
+      if (cancelled) return
+      lenis = new Lenis({ duration: 1.1, smoothWheel: true })
+      setLenis(lenis)
+      const raf = (time) => {
+        lenis.raf(time)
+        frame = requestAnimationFrame(raf)
+      }
       frame = requestAnimationFrame(raf)
-    }
-    frame = requestAnimationFrame(raf)
+    })
 
     return () => {
+      cancelled = true
       cancelAnimationFrame(frame)
       setLenis(null)
-      lenis.destroy()
+      lenis?.destroy()
     }
   }, [])
 
   return (
     // `reducedMotion="user"` makes every motion component here honour the
     // visitor's prefers-reduced-motion setting.
+    <LazyMotion features={domAnimation} strict>
     <MotionConfig reducedMotion="user">
       <ScrollProgress />
       <ScrollToTop />
@@ -131,5 +123,6 @@ export default function App() {
 
       <Footer />
     </MotionConfig>
+    </LazyMotion>
   )
 }

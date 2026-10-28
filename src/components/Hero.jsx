@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { hero } from '../data/site'
 
 /**
@@ -12,31 +12,40 @@ export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[660px] lg:min-h-[780px]">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="hero-bg-responsive h-full w-full bg-cover bg-center" />
+        <picture className="absolute inset-0 block h-full w-full">
+          <source media="(max-width: 768px)" srcSet="/banners/hero-bg-mobile.webp" type="image/webp" />
+          <img
+            src="/banners/hero-bg.webp"
+            alt=""
+            decoding="async"
+            fetchpriority="high"
+            className="h-full w-full object-cover object-center"
+          />
+        </picture>
         <div className="absolute inset-0 bg-overlay/72" />
       </div>
 
       <div className="container-x grid w-full items-center gap-10 py-24 lg:grid-cols-[1.15fr_1fr] lg:gap-14 lg:py-28">
         <div>
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl pb-1.5 text-white"
           >
             {hero.title}
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mt-1.5 max-w-xl font-bold text-white"
           >
             {hero.subtitle}
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -45,10 +54,10 @@ export default function Hero() {
             <Link to={hero.cta.to} className="btn-primary">
               {hero.cta.label}
             </Link>
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.25, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -64,7 +73,7 @@ export default function Hero() {
             fetchpriority="high"
             className="w-full max-w-[240px] sm:max-w-[300px] lg:max-w-[420px] aspect-[420/426] h-auto object-contain"
           />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

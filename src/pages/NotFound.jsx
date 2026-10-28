@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
 import { staticPagesSeo } from '../data/seoData'
@@ -29,14 +29,14 @@ export default function NotFound() {
 
       <section className="py-20 text-center sm:py-28">
         <div className="container-x">
-          <motion.p
+          <m.p
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             className="font-display text-[84px] font-semibold leading-none text-ink/10 sm:text-[160px]"
           >
             404
-          </motion.p>
+          </m.p>
           <h2 className="mt-2">This page does not exist</h2>
           <p className="mx-auto mt-4 max-w-md leading-relaxed">
             Head back to the homepage and start again, or jump straight to what you were

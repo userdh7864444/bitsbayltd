@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SEO from '../components/SEO'
 import { getIcon } from '../lib/icons'
 import ServiceHero from '../components/service/ServiceHero'
@@ -82,11 +82,11 @@ export default function StaffAugmentation() {
           </Reveal>
 
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-3">
-            {models.map((m) => {
-              const Icon = getIcon(m.icon)
+            {models.map((model) => {
+              const Icon = getIcon(model.icon)
               return (
-                <motion.div
-                  key={m.title}
+                <m.div
+                  key={model.title}
                   variants={childVariants}
                   className="group border border-line bg-white p-8 transition-colors duration-300 r-diag hover:bg-brand"
                 >
@@ -94,10 +94,10 @@ export default function StaffAugmentation() {
                     <Icon className="h-[46px] w-[46px]" strokeWidth={1.5} />
                   </span>
                   <h3 className="mt-4 text-black transition-colors group-hover:text-white">
-                    {m.title}
+                    {model.title}
                   </h3>
-                  <p className="mt-3 transition-colors group-hover:text-white">{m.body}</p>
-                </motion.div>
+                  <p className="mt-3 transition-colors group-hover:text-white">{model.body}</p>
+                </m.div>
               )
             })}
           </Stagger>
@@ -112,7 +112,7 @@ export default function StaffAugmentation() {
 
           <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {solutions.map((s) => (
-              <motion.div
+              <m.div
                 key={s.title}
                 variants={childVariants}
                 className="group border border-line bg-white p-7 transition-colors duration-300 r-diag hover:bg-brand"
@@ -121,7 +121,7 @@ export default function StaffAugmentation() {
                   {s.title}
                 </h3>
                 <p className="mt-3 transition-colors group-hover:text-white">{s.body}</p>
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         </div>

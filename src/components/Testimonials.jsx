@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Quote } from 'lucide-react'
 import { testimonials, testimonialsIntro } from '../data/site'
 import Reveal from './Reveal'
@@ -70,7 +70,7 @@ export default function Testimonials() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <motion.div
+          <m.div
             ref={trackRef}
             className="flex"
             animate={{ x: `-${index * (100 / view)}%` }}
@@ -100,7 +100,7 @@ export default function Testimonials() {
                 </figure>
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
 
         {pages > 1 && (

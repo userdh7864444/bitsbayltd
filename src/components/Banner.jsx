@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
+import BannerImage from './BannerImage'
 
 /**
  * The page banner, shared by every route so all banners are exactly the same
@@ -28,12 +29,7 @@ export default function Banner({
       className={`relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[660px] lg:min-h-[780px] ${className}`}
     >
       <div aria-hidden className="absolute inset-0 -z-10">
-        {image && (
-          <div
-            className="h-full w-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${image})` }}
-          />
-        )}
+        {image && <BannerImage src={image} priority />}
         <div className="absolute inset-0 bg-overlay/72" />
       </div>
 
@@ -41,17 +37,17 @@ export default function Banner({
         className={`container-x w-full py-24 lg:py-28 ${centered ? 'text-center' : ''}`}
       >
         {eyebrow && (
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-4 text-brand"
           >
             {eyebrow}
-          </motion.p>
+          </m.p>
         )}
 
-        <motion.h1
+        <m.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -60,10 +56,10 @@ export default function Banner({
           }`}
         >
           {title}
-        </motion.h1>
+        </m.h1>
 
         {subtitle && (
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -72,18 +68,18 @@ export default function Banner({
             }`}
           >
             {subtitle}
-          </motion.p>
+          </m.p>
         )}
 
         {children && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.24, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className={`mt-8 flex flex-wrap gap-4 ${centered ? 'justify-center' : ''}`}
           >
             {children}
-          </motion.div>
+          </m.div>
         )}
       </div>
     </section>

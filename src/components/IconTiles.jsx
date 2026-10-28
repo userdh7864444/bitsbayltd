@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { getIcon } from '../lib/icons'
 import { Stagger, childVariants } from './Reveal'
 
@@ -14,7 +14,7 @@ export default function IconTiles({ items, className = '' }) {
         const Icon = getIcon(item.icon)
         const filled = i === 0
         return (
-          <motion.div
+          <m.div
             key={item.label}
             variants={childVariants}
             whileHover={{ y: -6 }}
@@ -34,7 +34,7 @@ export default function IconTiles({ items, className = '' }) {
             >
               {item.label}
             </h3>
-          </motion.div>
+          </m.div>
         )
       })}
     </Stagger>

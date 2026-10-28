@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { CheckCircle2, Quote } from 'lucide-react'
 import { about, capabilities, mission } from '../data/site'
 import Reveal, { Stagger, childVariants } from './Reveal'
@@ -65,10 +65,10 @@ export default function About({ showQuote = true }) {
 
           <Stagger className="mt-8 grid gap-x-8 gap-y-3 sm:auto-rows-min sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-3">
             {capabilities.map((c) => (
-              <motion.div key={c} variants={childVariants} className="flex items-center gap-3">
+              <m.div key={c} variants={childVariants} className="flex items-center gap-3">
                 <CheckCircle2 className="h-[18px] w-[18px] shrink-0 text-brand" />
                 <span className="text-ink">{c}</span>
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         </div>

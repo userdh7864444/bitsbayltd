@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Stagger, childVariants } from '../Reveal'
 import SectionHead from './SectionHead'
@@ -20,7 +20,7 @@ export default function ProcessSteps({ section }) {
         {entries.length > 0 && (
           <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {entries.map((entry, i) => (
-              <motion.div
+              <m.div
                 key={`${entry.title || 'step'}-${i}`}
                 variants={childVariants}
                 className={`group p-8 transition-colors duration-300 r-diag ${
@@ -56,7 +56,7 @@ export default function ProcessSteps({ section }) {
                     {entry.body}
                   </p>
                 )}
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         )}

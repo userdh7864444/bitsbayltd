@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SEO from '../components/SEO'
 import Banner from '../components/Banner'
 import { ArrowLeft, ArrowRight, CheckCircle2, AlertCircle, Wrench, TrendingUp } from 'lucide-react'
@@ -140,14 +140,14 @@ export default function ProjectDetail() {
 
               <Stagger className="mt-6 grid gap-4 sm:grid-cols-3">
                 {project.results.map((res, i) => (
-                  <motion.div
+                  <m.div
                     key={i}
                     variants={childVariants}
                     className="flex items-start gap-3 border border-line bg-white p-6 r-diag-sm"
                   >
                     <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-brand" />
                     <p className="font-semibold text-ink leading-snug">{res}</p>
-                  </motion.div>
+                  </m.div>
                 ))}
               </Stagger>
             </div>
@@ -161,7 +161,7 @@ export default function ProjectDetail() {
               </Reveal>
               <Stagger className="mt-8 grid gap-6 sm:grid-cols-2">
                 {project.shots.map((src, i) => (
-                  <motion.figure
+                  <m.figure
                     key={src}
                     variants={childVariants}
                     className={`overflow-hidden border border-line bg-muted r-diag ${
@@ -178,7 +178,7 @@ export default function ProjectDetail() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                       className="w-full h-auto object-cover"
                     />
-                  </motion.figure>
+                  </m.figure>
                 ))}
               </Stagger>
             </div>

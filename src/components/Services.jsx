@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { getIcon } from '../lib/icons'
 import { services, servicesIntro } from '../data/site'
 import Reveal, { Stagger, childVariants } from './Reveal'
@@ -25,7 +25,7 @@ export default function Services() {
             const Icon = getIcon(s.icon)
             const filled = i === 0
             return (
-              <motion.article
+              <m.article
                 key={s.title}
                 variants={childVariants}
                 className={`group relative flex flex-col overflow-hidden p-8 transition-colors duration-300 sm:p-10 r-diag ${
@@ -72,7 +72,7 @@ export default function Services() {
                   Read More
                   <span className="sr-only">{` about ${s.title}`}</span>
                 </Link>
-              </motion.article>
+              </m.article>
             )
           })}
         </Stagger>

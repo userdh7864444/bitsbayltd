@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import SEO from '../components/SEO'
 import PageHeader from './PageHeader'
@@ -37,7 +37,7 @@ function Gallery({ label, items, className = '' }) {
 
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p) => (
-            <motion.article
+            <m.article
               key={p.slug}
               variants={childVariants}
               className="group relative overflow-hidden border border-line bg-white transition-shadow duration-300 r-diag hover:shadow-[0_20px_50px_-25px_rgba(0,0,0,0.35)]"
@@ -72,7 +72,7 @@ function Gallery({ label, items, className = '' }) {
                 </h3>
                 <p className="mt-1.5 text-sm">{p.category}</p>
               </div>
-            </motion.article>
+            </m.article>
           ))}
         </Stagger>
       </div>

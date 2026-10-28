@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useReducedMotion, useInView } from 'framer-motion'
+import { m, useReducedMotion, useInView } from 'framer-motion'
 
 // Reveal triggers as soon as any part of a block clears this much of the
 // viewport. Using a margin rather than an `amount` threshold matters for the
@@ -37,7 +37,7 @@ export default function Reveal({
     return <Tag className={className}>{children}</Tag>
   }
 
-  const MotionTag = motion[as] ?? motion.div
+  const MotionTag = m[as] ?? m.div
 
   return (
     <MotionTag
@@ -66,7 +66,7 @@ export function Stagger({ children, className = '', stagger = 0.09, once = true,
     )
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={className}
       style={style}
@@ -78,7 +78,7 @@ export function Stagger({ children, className = '', stagger = 0.09, once = true,
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -99,7 +99,7 @@ export function AnimatedHeading({ text, className = '', delay = 0 }) {
   if (reduce) return <h1 className={className}>{text}</h1>
 
   return (
-    <motion.h1
+    <m.h1
       className={className}
       initial="hidden"
       animate="show"
@@ -110,7 +110,7 @@ export function AnimatedHeading({ text, className = '', delay = 0 }) {
     >
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden align-bottom">
-          <motion.span
+          <m.span
             className="inline-block"
             variants={{
               hidden: { y: '100%', opacity: 0 },
@@ -123,9 +123,9 @@ export function AnimatedHeading({ text, className = '', delay = 0 }) {
           >
             {word}
             {i < words.length - 1 ? ' ' : ''}
-          </motion.span>
+          </m.span>
         </span>
       ))}
-    </motion.h1>
+    </m.h1>
   )
 }

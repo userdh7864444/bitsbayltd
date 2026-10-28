@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SEO from '../components/SEO'
 import Banner from '../components/Banner'
 import { serviceSeo } from '../data/seoData'
@@ -223,7 +223,7 @@ export default function ListingIntegrity() {
 
           <Stagger className="grid gap-2.5">
             {features.map((f) => (
-              <motion.div
+              <m.div
                 key={f}
                 variants={childVariants}
                 className="flex items-center gap-3 rounded-xl border border-line bg-white px-4 py-3"
@@ -232,7 +232,7 @@ export default function ListingIntegrity() {
                   <Check className="h-3.5 w-3.5" strokeWidth={3} />
                 </span>
                 <span className="text-sm font-medium text-ink">{f}</span>
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         </div>
@@ -330,7 +330,7 @@ export default function ListingIntegrity() {
             {setupSteps.map((s, i) => {
               const Icon = icons[s.icon]
               return (
-                <motion.div
+                <m.div
                   key={s.title}
                   variants={childVariants}
                   className="rounded-2xl border border-line bg-white p-6"
@@ -341,7 +341,7 @@ export default function ListingIntegrity() {
                   <p className="mt-4 text-xs font-semibold text-brand">{`Step ${i + 1}`}</p>
                   <h3 className="mt-1 font-display text-base font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-body">{s.body}</p>
-                </motion.div>
+                </m.div>
               )
             })}
           </Stagger>
@@ -367,14 +367,14 @@ export default function ListingIntegrity() {
               </p>
               <Stagger className="grid gap-3">
                 {without.map((w) => (
-                  <motion.div
+                  <m.div
                     key={w.title}
                     variants={childVariants}
                     className="rounded-xl border border-line bg-white p-5"
                   >
                     <h3 className="font-display text-sm font-semibold">{w.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-body">{w.body}</p>
-                  </motion.div>
+                  </m.div>
                 ))}
               </Stagger>
             </div>
@@ -385,14 +385,14 @@ export default function ListingIntegrity() {
               </p>
               <Stagger className="grid gap-3">
                 {withIt.map((w) => (
-                  <motion.div
+                  <m.div
                     key={w.title}
                     variants={childVariants}
                     className="rounded-xl border border-brand/30 bg-white p-5"
                   >
                     <h3 className="font-display text-sm font-semibold">{w.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-body">{w.body}</p>
-                  </motion.div>
+                  </m.div>
                 ))}
               </Stagger>
             </div>
@@ -424,7 +424,7 @@ export default function ListingIntegrity() {
 
           <Stagger className="mt-10 grid gap-6 lg:grid-cols-3">
             {plans.map((plan) => (
-              <motion.div
+              <m.div
                 key={plan.name}
                 variants={childVariants}
                 className={`rounded-2xl border p-8 ${
@@ -482,7 +482,7 @@ export default function ListingIntegrity() {
                   Get started
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         </div>

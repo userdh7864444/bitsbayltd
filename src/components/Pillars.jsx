@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowRight, CircleArrowRight } from 'lucide-react'
 import { getIcon } from '../lib/icons'
 import { pillars, appointment } from '../data/site'
@@ -20,7 +20,7 @@ export default function Pillars() {
           {pillars.map((p, i) => {
             const Icon = getIcon(p.icon)
             return (
-              <motion.article
+              <m.article
                 key={p.title}
                 variants={childVariants}
                 className={`group bg-muted px-7 py-9 text-center transition-colors duration-300 sm:px-8 sm:py-10 ${
@@ -39,12 +39,12 @@ export default function Pillars() {
                 >
                   <CircleArrowRight className="h-[26px] w-[26px]" />
                 </Link>
-              </motion.article>
+              </m.article>
             )
           })}
 
           {/* Fourth column: the red appointment panel */}
-          <motion.div
+          <m.div
             variants={childVariants}
             className="flex flex-col justify-center bg-brand px-7 py-9 text-white sm:px-8 sm:py-10"
           >
@@ -54,7 +54,7 @@ export default function Pillars() {
               {appointment.cta.label}
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
-          </motion.div>
+          </m.div>
         </Stagger>
       </div>
     </section>

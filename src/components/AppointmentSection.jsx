@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Reveal from './Reveal'
+import BannerImage from './BannerImage'
 import { cta } from '../data/site'
 
 /**
@@ -11,10 +12,7 @@ export default function AppointmentSection() {
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-[100px]">
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/banners/cta.webp')" }}
-        />
+        <BannerImage src="/banners/cta.webp" webp={false} />
         <div className="absolute inset-0 bg-overlay/92" />
       </div>
 
